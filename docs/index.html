@@ -139,9 +139,12 @@
         <span class="filtro-titulo">Tipo</span>
         <div class="tipos-grid" id="tipos-grid"></div>
         <div>
-          <button class="link-mini" data-tipos-acao="todos">marcar todos</button> ·
-          <button class="link-mini" data-tipos-acao="nenhum">limpar</button>
+          <button class="link-mini" data-tipos-acao="todos">ver todos</button>
         </div>
+      </div>
+      <div class="filtro-linha" style="padding-top:0;border-top:none;margin-top:2px">
+        <span class="filtro-titulo"></span>
+        <span style="font-size:0.74rem;color:var(--texto-suave)">clique num tipo pra ver só ele · Ctrl+clique pra combinar mais de um · "ver todos" volta a mostrar tudo</span>
       </div>
 
       <div class="filtro-linha">
@@ -212,6 +215,7 @@
 
   function isoDe(date) { return date.toISOString().slice(0, 10); }
 
+  // --- filtros que não dependem do tipo (usado pra calcular as contagens por tipo) ---
   function filtrarSemTipo() {
     return dados.filter((m) => {
       if (escopo === 'so-depaf' && !m.isDepafMention) return false;
@@ -247,9 +251,19 @@
       const btn = document.createElement('button');
       btn.className = 'chip-tipo' + (tiposSelecionados.has(tipo) ? ' selecionado' : '') + (n === 0 ? ' zero' : '');
       btn.innerHTML = `${escapeHtml(tipo)} <span class="contagem">${n}</span>`;
-      btn.addEventListener('click', () => {
-        if (tiposSelecionados.has(tipo)) tiposSelecionados.delete(tipo);
-        else tiposSelecionados.add(tipo);
+      btn.addEventListener('click', (e) => {
+        const eraSoEsse = tiposSelecionados.size === 1 && tiposSelecionados.has(tipo);
+        if (e.ctrlKey || e.metaKey || e.shiftKey) {
+          // Ctrl/Cmd/Shift + clique: soma ou tira esse tipo da seleção atual, sem mexer no resto.
+          if (tiposSelecionados.has(tipo)) tiposSelecionados.delete(tipo);
+          else tiposSelecionados.add(tipo);
+        } else if (eraSoEsse) {
+          // clicar de novo no único tipo já isolado volta a mostrar todos
+          tiposSelecionados = new Set(TIPOS);
+        } else {
+          // clique normal: isola só esse tipo (desmarca todos os outros)
+          tiposSelecionados = new Set([tipo]);
+        }
         itensVisiveis = TAMANHO_PAGINA;
         renderizar();
       });
