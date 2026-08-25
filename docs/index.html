@@ -22,66 +22,169 @@
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--texto); font-family: 'IBM Plex Sans', system-ui, sans-serif; }
-  header { position: relative; background: linear-gradient(135deg, var(--petroleo) 0%, var(--petroleo-2) 100%); color: #fff; padding: 28px 32px 34px; overflow: hidden; }
-  header::after { content: ""; position: absolute; top: -40%; right: -8%; width: 220px; height: 260%; background: var(--dourado); opacity: 0.9; transform: rotate(20deg); }
-  header .inner { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; }
-  header h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.6rem; letter-spacing: 0.02em; margin: 0 0 4px; }
-  header p { margin: 0; color: #cfe3e1; font-size: 0.92rem; }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 32px 60px; }
-  .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
-  .tabs { display: flex; gap: 8px; flex-wrap: wrap; }
-  .tab { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.85rem; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--borda); background: var(--card-bg); color: var(--texto-suave); cursor: pointer; }
-  .tab.active { background: var(--petroleo); border-color: var(--petroleo); color: #fff; }
+
+  header { position: relative; background: linear-gradient(135deg, var(--petroleo) 0%, var(--petroleo-2) 100%); color: #fff; padding: 26px 32px 30px; overflow: hidden; }
+  header::after { content: ""; position: absolute; top: -60%; right: -6%; width: 140px; height: 280%; background: var(--dourado); opacity: 0.85; transform: rotate(20deg); }
+  header .inner { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  header .titulo-bloco h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.55rem; letter-spacing: 0.01em; margin: 0 0 4px; }
+  header .titulo-bloco p { margin: 0; color: #cfe3e1; font-size: 0.88rem; max-width: 46ch; }
+  header .stats-resumo { display: flex; gap: 22px; font-family: 'Space Grotesk', sans-serif; }
+  header .stats-resumo .num { font-size: 1.5rem; font-weight: 700; line-height: 1; color: var(--dourado-claro); }
+  header .stats-resumo .lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: #cfe3e1; margin-top: 3px; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 22px 32px 60px; }
+
+  .painel-filtros { background: var(--card-bg); border: 1px solid var(--borda); border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+  .filtro-linha { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .filtro-linha + .filtro-linha { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--borda); }
+  .filtro-titulo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--texto-suave); min-width: 92px; }
+
+  .segmentado { display: inline-flex; border: 1px solid var(--petroleo); border-radius: 999px; overflow: hidden; }
+  .segmentado button { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.82rem; padding: 7px 16px; border: none; background: #fff; color: var(--petroleo); cursor: pointer; }
+  .segmentado button.active { background: var(--petroleo); color: #fff; }
+
+  .periodo-campos { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .periodo-campos input[type=date] { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; padding: 6px 8px; border: 1px solid var(--borda); border-radius: 6px; background: #fff; color: var(--texto); }
+  .periodo-campos span.ate { font-size: 0.8rem; color: var(--texto-suave); }
+  .chip-preset { font-family: 'IBM Plex Sans', sans-serif; font-size: 0.78rem; font-weight: 500; padding: 6px 12px; border: 1px solid var(--borda); border-radius: 6px; background: #fff; color: var(--texto-suave); cursor: pointer; }
+  .chip-preset:hover { border-color: var(--petroleo); color: var(--petroleo); }
+
+  .tipos-grid { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+  .chip-tipo { font-family: 'IBM Plex Sans', sans-serif; font-size: 0.78rem; font-weight: 500; padding: 6px 11px; border-radius: 6px; border: 1px solid var(--borda); background: #fff; color: var(--texto-suave); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+  .chip-tipo .contagem { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--texto-suave); }
+  .chip-tipo.selecionado { background: var(--petroleo); border-color: var(--petroleo); color: #fff; }
+  .chip-tipo.selecionado .contagem { color: var(--dourado-claro); }
+  .chip-tipo.zero { opacity: 0.4; cursor: default; }
+  .link-mini { font-size: 0.76rem; color: var(--texto-suave); text-decoration: underline; cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; }
+  .link-mini:hover { color: var(--petroleo); }
+
+  .busca-linha { display: flex; align-items: center; gap: 10px; flex: 1; }
+  .busca-linha input[type=search] { flex: 1; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.88rem; padding: 8px 12px; border: 1px solid var(--borda); border-radius: 6px; background: #fff; color: var(--texto); min-width: 180px; }
+  .toggle-linha { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--texto-suave); cursor: pointer; user-select: none; }
+  .toggle-linha input { accent-color: var(--petroleo); width: 15px; height: 15px; }
+
+  .status-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
   .status { font-size: 0.82rem; color: var(--texto-suave); font-family: 'IBM Plex Mono', monospace; }
-  .card { background: var(--card-bg); border: 1px solid var(--borda); border-left: 4px solid var(--dourado); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
-  .card.visto { border-left-color: var(--borda); opacity: 0.6; }
+
+  .card { background: var(--card-bg); border: 1px solid var(--borda); border-left: 4px solid var(--borda); border-radius: 8px; padding: 15px 18px; margin-bottom: 10px; }
+  .card.pcba { border-left-color: var(--dourado); }
+  .card.depaf { border-left-color: var(--petroleo); }
+  .card.visto { opacity: 0.55; }
   .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
-  .badges { display: flex; gap: 6px; flex-wrap: wrap; }
-  .badge { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.03em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: var(--petroleo); color: var(--dourado-claro); }
-  .badge-depaf { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.03em; padding: 3px 10px; border-radius: 999px; background: var(--dourado); color: var(--petroleo); }
-  .data { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--texto-suave); }
-  .snippet { font-size: 0.94rem; line-height: 1.5; margin: 6px 0 12px; }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.7rem; letter-spacing: 0.02em; padding: 3px 9px; border-radius: 5px; background: var(--bg); border: 1px solid var(--borda); color: var(--texto-suave); }
+  .badge-depaf { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.02em; padding: 3px 9px; border-radius: 5px; background: var(--petroleo); color: var(--dourado-claro); }
+  .data { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--texto-suave); white-space: nowrap; }
+  .snippet { font-size: 0.92rem; line-height: 1.55; margin: 6px 0 12px; }
   .snippet mark { background: var(--dourado-claro); padding: 0 2px; border-radius: 3px; }
   .card-actions { display: flex; gap: 10px; align-items: center; }
-  .card-actions a, .card-actions button { font-family: 'IBM Plex Sans', sans-serif; font-size: 0.8rem; font-weight: 500; text-decoration: none; border: 1px solid var(--borda); background: #fff; color: var(--texto); padding: 6px 12px; border-radius: 6px; cursor: pointer; }
+  .card-actions a, .card-actions button { font-family: 'IBM Plex Sans', sans-serif; font-size: 0.78rem; font-weight: 500; text-decoration: none; border: 1px solid var(--borda); background: #fff; color: var(--texto); padding: 5px 11px; border-radius: 6px; cursor: pointer; }
   .card-actions a:hover, .card-actions button:hover { border-color: var(--petroleo); }
+
+  .carregar-mais { display: block; margin: 18px auto 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.85rem; padding: 10px 22px; border-radius: 999px; border: 1px solid var(--petroleo); background: #fff; color: var(--petroleo); cursor: pointer; }
+  .carregar-mais:hover { background: var(--petroleo); color: #fff; }
+
   .empty, .erro { text-align: center; padding: 40px 20px; color: var(--texto-suave); font-size: 0.95rem; }
   .erro { color: var(--erro); }
-  .rodape { max-width: 980px; margin: 0 auto; padding: 0 32px 40px; font-size: 0.78rem; color: var(--texto-suave); }
+  .rodape { max-width: 1040px; margin: 20px auto 0; padding: 16px 32px 40px; border-top: 1px solid var(--borda); font-size: 0.78rem; color: var(--texto-suave); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .rodape a { color: var(--texto-suave); }
+
+  @media (max-width: 640px) {
+    header .inner { flex-direction: column; align-items: flex-start; }
+    .filtro-linha { align-items: flex-start; flex-direction: column; }
+    .filtro-titulo { min-width: 0; }
+  }
 </style>
 </head>
 <body>
   <header>
     <div class="inner">
-      <h1>Monitor DOE-BA · DEPAF</h1>
-      <p>Publicações do Diário Oficial do Estado da Bahia mencionando a DEPAF / Polícia Civil da Bahia. Atualizado todo dia útil, automaticamente.</p>
+      <div class="titulo-bloco">
+        <h1>Monitor DOE-BA · DEPAF</h1>
+        <p>Publicações do Diário Oficial do Estado da Bahia mencionando a Polícia Civil da Bahia, com destaque pra o que cita a DEPAF diretamente.</p>
+      </div>
+      <div class="stats-resumo">
+        <div><div class="num" id="stat-total">–</div><div class="lbl">publicações</div></div>
+        <div><div class="num" id="stat-depaf">–</div><div class="lbl">DEPAF direto</div></div>
+        <div><div class="num" id="stat-atualizado">–</div><div class="lbl">edição mais recente</div></div>
+      </div>
     </div>
   </header>
 
   <div class="wrap">
-    <div class="toolbar">
-      <div class="tabs">
-        <button class="tab active" data-escopo="todos-pcba">Toda Polícia Civil</button>
-        <button class="tab" data-escopo="so-depaf">Só DEPAF</button>
+
+    <div class="painel-filtros">
+      <div class="filtro-linha">
+        <span class="filtro-titulo">Escopo</span>
+        <div class="segmentado">
+          <button class="active" data-escopo="todos-pcba">Toda Polícia Civil</button>
+          <button data-escopo="so-depaf">Só DEPAF</button>
+        </div>
       </div>
-      <div class="tabs">
-        <button class="tab" data-ocultar="nao" data-toggle-ocultar>Ocultar as que eu já vi (neste navegador)</button>
+
+      <div class="filtro-linha">
+        <span class="filtro-titulo">Período</span>
+        <div class="periodo-campos">
+          <input type="date" id="data-de" />
+          <span class="ate">até</span>
+          <input type="date" id="data-ate" />
+          <button class="chip-preset" data-preset="7">Últimos 7 dias</button>
+          <button class="chip-preset" data-preset="30">Últimos 30 dias</button>
+          <button class="chip-preset" data-preset="mes">Este mês</button>
+          <button class="chip-preset" data-preset="tudo">Tudo</button>
+        </div>
       </div>
+
+      <div class="filtro-linha">
+        <span class="filtro-titulo">Tipo</span>
+        <div class="tipos-grid" id="tipos-grid"></div>
+        <div>
+          <button class="link-mini" data-tipos-acao="todos">ver todos</button>
+        </div>
+      </div>
+      <div class="filtro-linha" style="padding-top:0;border-top:none;margin-top:2px">
+        <span class="filtro-titulo"></span>
+        <span style="font-size:0.74rem;color:var(--texto-suave)">clique num tipo pra ver só ele · Ctrl+clique pra combinar mais de um · "ver todos" volta a mostrar tudo</span>
+      </div>
+
+      <div class="filtro-linha">
+        <span class="filtro-titulo">Buscar</span>
+        <div class="busca-linha">
+          <input type="search" id="busca-texto" placeholder="Buscar palavra no texto da publicação…" />
+        </div>
+        <label class="toggle-linha">
+          <input type="checkbox" id="chk-ocultar-vistas" />
+          Ocultar as que eu já vi (neste navegador)
+        </label>
+      </div>
+    </div>
+
+    <div class="status-bar">
       <div class="status" id="status">carregando…</div>
     </div>
 
     <div id="lista"></div>
+    <button class="carregar-mais" id="btn-carregar-mais" style="display:none">Carregar mais</button>
   </div>
 
   <div class="rodape">
-    "Marcar como visto" é só uma lembrança pessoal salva neste navegador — não afeta o que outras pessoas do DEPAF veem quando abrem este mesmo painel.
+    <span>"Marcar como visto" é só uma lembrança pessoal salva neste navegador — não afeta o que outras pessoas do DEPAF veem.</span>
+    <span>Fonte: <a href="https://dool.egba.ba.gov.br/" target="_blank" rel="noopener">Diário Oficial do Estado da Bahia</a></span>
   </div>
 
 <script>
   const CHAVE_VISTOS = 'monitor-doe-depaf-vistos';
+  const TIPOS = ['Nomeação','Exoneração','Designação','Aposentadoria','Licença','Cessão / Remoção','Convocação','Diárias / Viagem','Retificação','Edital','Contrato / Licitação','Portaria','Ato / Decreto','Outro'];
+  const TAMANHO_PAGINA = 40;
+
   let escopo = 'todos-pcba';
+  let dataDe = null;
+  let dataAte = null;
+  let tiposSelecionados = new Set(TIPOS);
+  let buscaTexto = '';
   let ocultarVistos = false;
   let dados = [];
+  let itensVisiveis = TAMANHO_PAGINA;
 
   function lerVistos() {
     try { return new Set(JSON.parse(localStorage.getItem(CHAVE_VISTOS) || '[]')); }
@@ -92,14 +195,17 @@
   }
 
   function escapeHtml(s) {
-    return s.replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
-  function destacarTermo(snippet, termo) {
-    const escapado = escapeHtml(snippet);
-    if (!termo) return escapado;
-    const re = new RegExp('(' + termo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
-    return escapado.replace(re, '<mark>$1</mark>');
+  function destacarTermo(snippet, termos) {
+    let escapado = escapeHtml(snippet);
+    const lista = [...new Set(termos.filter(Boolean))];
+    lista.forEach((termo) => {
+      const re = new RegExp('(' + termo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      escapado = escapado.replace(re, '<mark>$1</mark>');
+    });
+    return escapado;
   }
 
   function formatarData(iso) {
@@ -107,21 +213,80 @@
     return d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
   }
 
+  function isoDe(date) { return date.toISOString().slice(0, 10); }
+
+  // --- filtros que não dependem do tipo (usado pra calcular as contagens por tipo) ---
+  function filtrarSemTipo() {
+    return dados.filter((m) => {
+      if (escopo === 'so-depaf' && !m.isDepafMention) return false;
+      if (dataDe && m.editionDate < dataDe) return false;
+      if (dataAte && m.editionDate > dataAte) return false;
+      if (buscaTexto) {
+        const alvo = (m.snippet || '').toLowerCase();
+        if (!alvo.includes(buscaTexto.toLowerCase())) return false;
+      }
+      return true;
+    });
+  }
+
+  function filtrarCompleto() {
+    const vistos = lerVistos();
+    return filtrarSemTipo().filter((m) => {
+      if (!tiposSelecionados.has(m.movementType)) return false;
+      if (ocultarVistos && vistos.has(m.id)) return false;
+      return true;
+    });
+  }
+
+  function renderTipos() {
+    const base = filtrarSemTipo();
+    const contagens = {};
+    TIPOS.forEach((t) => (contagens[t] = 0));
+    base.forEach((m) => { if (contagens[m.movementType] !== undefined) contagens[m.movementType]++; });
+
+    const grid = document.getElementById('tipos-grid');
+    grid.innerHTML = '';
+    TIPOS.forEach((tipo) => {
+      const n = contagens[tipo] || 0;
+      const btn = document.createElement('button');
+      btn.className = 'chip-tipo' + (tiposSelecionados.has(tipo) ? ' selecionado' : '') + (n === 0 ? ' zero' : '');
+      btn.innerHTML = `${escapeHtml(tipo)} <span class="contagem">${n}</span>`;
+      btn.addEventListener('click', (e) => {
+        const eraSoEsse = tiposSelecionados.size === 1 && tiposSelecionados.has(tipo);
+        if (e.ctrlKey || e.metaKey || e.shiftKey) {
+          // Ctrl/Cmd/Shift + clique: soma ou tira esse tipo da seleção atual, sem mexer no resto.
+          if (tiposSelecionados.has(tipo)) tiposSelecionados.delete(tipo);
+          else tiposSelecionados.add(tipo);
+        } else if (eraSoEsse) {
+          // clicar de novo no único tipo já isolado volta a mostrar todos
+          tiposSelecionados = new Set(TIPOS);
+        } else {
+          // clique normal: isola só esse tipo (desmarca todos os outros)
+          tiposSelecionados = new Set([tipo]);
+        }
+        itensVisiveis = TAMANHO_PAGINA;
+        renderizar();
+      });
+      grid.appendChild(btn);
+    });
+  }
+
   function renderCard(m, vistos) {
     const jaVisto = vistos.has(m.id);
     const div = document.createElement('div');
-    div.className = 'card' + (jaVisto ? ' visto' : '');
+    div.className = 'card ' + (m.isDepafMention ? 'depaf' : 'pcba') + (jaVisto ? ' visto' : '');
     div.innerHTML = `
       <div class="card-top">
         <div class="badges">
           <span class="badge">${escapeHtml(m.movementType)}</span>
+          ${m.editionNumero ? `<span class="badge">edição nº ${escapeHtml(String(m.editionNumero))}</span>` : ''}
           ${m.isDepafMention ? '<span class="badge-depaf">menciona DEPAF</span>' : ''}
         </div>
         <span class="data">${formatarData(m.editionDate)}${m.page ? ' · pág. ' + m.page : ''}</span>
       </div>
-      <div class="snippet">${destacarTermo(m.snippet, m.matchedTerm)}</div>
+      <div class="snippet">${destacarTermo(m.snippet, [m.matchedTerm])}</div>
       <div class="card-actions">
-        <a href="${m.sourceUrl}" target="_blank" rel="noopener">Ver PDF da edição ↗</a>
+        <a href="${m.sourceUrl}" target="_blank" rel="noopener">Ver no Diário ↗</a>
         <button data-marcar="${m.id}">${jaVisto ? 'marcado como visto ✓' : 'marcar como visto'}</button>
       </div>
     `;
@@ -137,18 +302,30 @@
   function renderizar() {
     const listaEl = document.getElementById('lista');
     const statusEl = document.getElementById('status');
+    const btnMais = document.getElementById('btn-carregar-mais');
     const vistos = lerVistos();
 
-    let filtrados = escopo === 'so-depaf' ? dados.filter((m) => m.isDepafMention) : dados;
-    if (ocultarVistos) filtrados = filtrados.filter((m) => !vistos.has(m.id));
+    renderTipos();
+
+    const filtrados = filtrarCompleto();
+    const visiveis = filtrados.slice(0, itensVisiveis);
 
     listaEl.innerHTML = '';
     if (filtrados.length === 0) {
-      listaEl.innerHTML = '<div class="empty">Nenhuma publicação encontrada por aqui.</div>';
+      listaEl.innerHTML = '<div class="empty">Nenhuma publicação encontrada com esses filtros.</div>';
     } else {
-      filtrados.forEach((m) => listaEl.appendChild(renderCard(m, vistos)));
+      visiveis.forEach((m) => listaEl.appendChild(renderCard(m, vistos)));
     }
-    statusEl.textContent = `${filtrados.length} de ${dados.length} publicação(ões)`;
+
+    statusEl.textContent = `${filtrados.length} de ${dados.length} publicação(ões)${filtrados.length !== visiveis.length ? ' · mostrando ' + visiveis.length : ''}`;
+    btnMais.style.display = itensVisiveis < filtrados.length ? 'block' : 'none';
+  }
+
+  function atualizarResumo() {
+    document.getElementById('stat-total').textContent = dados.length;
+    document.getElementById('stat-depaf').textContent = dados.filter((m) => m.isDepafMention).length;
+    const maisRecente = dados.reduce((max, m) => (m.editionDate > max ? m.editionDate : max), '');
+    document.getElementById('stat-atualizado').textContent = maisRecente ? formatarData(maisRecente) : '–';
   }
 
   async function carregar() {
@@ -158,6 +335,7 @@
       const res = await fetch('data/matches.json', { cache: 'no-store' });
       if (!res.ok) throw new Error('resposta ' + res.status);
       dados = await res.json();
+      atualizarResumo();
       renderizar();
     } catch (err) {
       listaEl.innerHTML = `<div class="erro">Não consegui carregar os dados (${err.message}). Se o robô ainda não rodou nenhuma vez, data/matches.json pode não existir ainda.</div>`;
@@ -170,13 +348,68 @@
       document.querySelectorAll('[data-escopo]').forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       escopo = btn.dataset.escopo;
+      itensVisiveis = TAMANHO_PAGINA;
       renderizar();
     });
   });
 
-  document.querySelector('[data-toggle-ocultar]').addEventListener('click', (e) => {
-    ocultarVistos = !ocultarVistos;
-    e.target.classList.toggle('active', ocultarVistos);
+  document.getElementById('data-de').addEventListener('change', (e) => {
+    dataDe = e.target.value || null;
+    itensVisiveis = TAMANHO_PAGINA;
+    renderizar();
+  });
+  document.getElementById('data-ate').addEventListener('change', (e) => {
+    dataAte = e.target.value || null;
+    itensVisiveis = TAMANHO_PAGINA;
+    renderizar();
+  });
+
+  document.querySelectorAll('.chip-preset').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const hoje = new Date();
+      const preset = btn.dataset.preset;
+      if (preset === 'tudo') {
+        dataDe = null; dataAte = null;
+      } else if (preset === 'mes') {
+        const primeiro = new Date(hoje.getFullYear(), hoje.getMonth(), 1);
+        dataDe = isoDe(primeiro); dataAte = isoDe(hoje);
+      } else {
+        const dias = parseInt(preset, 10);
+        const inicio = new Date(hoje); inicio.setDate(inicio.getDate() - dias);
+        dataDe = isoDe(inicio); dataAte = isoDe(hoje);
+      }
+      document.getElementById('data-de').value = dataDe || '';
+      document.getElementById('data-ate').value = dataAte || '';
+      itensVisiveis = TAMANHO_PAGINA;
+      renderizar();
+    });
+  });
+
+  document.querySelectorAll('[data-tipos-acao]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      tiposSelecionados = btn.dataset.tiposAcao === 'todos' ? new Set(TIPOS) : new Set();
+      itensVisiveis = TAMANHO_PAGINA;
+      renderizar();
+    });
+  });
+
+  let debounceBusca;
+  document.getElementById('busca-texto').addEventListener('input', (e) => {
+    clearTimeout(debounceBusca);
+    debounceBusca = setTimeout(() => {
+      buscaTexto = e.target.value.trim();
+      itensVisiveis = TAMANHO_PAGINA;
+      renderizar();
+    }, 250);
+  });
+
+  document.getElementById('chk-ocultar-vistas').addEventListener('change', (e) => {
+    ocultarVistos = e.target.checked;
+    renderizar();
+  });
+
+  document.getElementById('btn-carregar-mais').addEventListener('click', () => {
+    itensVisiveis += TAMANHO_PAGINA;
     renderizar();
   });
 
