@@ -1,0 +1,36 @@
+name: Monitor DOE-BA DEPAF
+
+on:
+  schedule:
+    # 11:00 UTC = 08:00 no horário da Bahia (UTC-3). Roda de segunda a sexta.
+    - cron: '0 11 * * 1-5'
+  workflow_dispatch: {} # permite rodar manualmente pelo botão "Run workflow" no GitHub
+
+permissions:
+  contents: write # precisa pra poder comitar o arquivo de dados atualizado
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar o robô
+        run: node scraper.js
+
+      - name: Salvar os dados atualizados no repositório
+        run: |
+          git config user.name "monitor-doe-depaf-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data
+          git diff --cached --quiet && echo "Nada novo hoje." || git commit -m "Atualiza dados do Diário ($(date -u +%Y-%m-%d))"
+          git push
