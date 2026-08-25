@@ -1,0 +1,404 @@
+---- 25/08/2026 11:58:37,94 ---- 
+Already up to date.
+Erro fatal: AxiosError: unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca
+    at AxiosError.from (C:\Users\gabri\Documents\monitor-doe-depaf\node_modules\axios\dist\node\axios.cjs:1478:24)
+    at RedirectableRequest.handleRequestError (C:\Users\gabri\Documents\monitor-doe-depaf\node_modules\axios\dist\node\axios.cjs:4427:25)
+    at RedirectableRequest.emit (node:events:521:24)
+    at eventHandlers.<computed> (C:\Users\gabri\Documents\monitor-doe-depaf\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:28)
+    at emitErrorEvent (node:_http_client:112:11)
+    at TLSSocket.socketErrorListener (node:_http_client:745:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\gabri\Documents\monitor-doe-depaf\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async discoverLatestEditionId (C:\Users\gabri\Documents\monitor-doe-depaf\scraper.js:78:15)
+    at async runOnce (C:\Users\gabri\Documents\monitor-doe-depaf\scraper.js:148:18)
+    at async main (C:\Users\gabri\Documents\monitor-doe-depaf\scraper.js:212:3) {
+  isAxiosError: true,
+  code: 'UNABLE_TO_VERIFY_LEAF_SIGNATURE',
+  config: [Object: null prototype] {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false,
+      legacyInterceptorReqResOrdering: true,
+      advertiseZstdAcceptEncoding: false,
+      validateStatusUndefinedResolves: true
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 20000,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'text/html,application/pdf,application/xhtml+xml,*/*',
+      'Content-Type': undefined,
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://dool.egba.ba.gov.br/',
+    allowAbsoluteUrls: true,
+    data: undefined
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Array],
+      timeout: undefined,
+      abort: undefined
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function (anonymous)],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      Symbol(kState): 17581054,
+      Symbol(kBufferedValue): null,
+      Symbol(kErroredValue): [Error]
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object: null prototype],
+      http2Options: undefined,
+      hostname: 'dool.egba.ba.gov.br',
+      port: '',
+      agent: undefined,
+      sensitiveHeaders: [],
+      insecureHTTPParser: false,
+      nativeProtocols: [Object],
+      pathname: '/'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _headerFilter: /^(?:Authorization|Proxy-Authorization|Cookie)$/i,
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      _header: 'GET / HTTP/1.1\r\n' +
+        'Accept: text/html,application/pdf,application/xhtml+xml,*/*\r\n' +
+        'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: dool.egba.ba.gov.br\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: false,
+      httpValidation: undefined,
+      joinDuplicateHeaders: undefined,
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'dool.egba.ba.gov.br',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      Symbol(shapeMode): false,
+      Symbol(kCapture): false,
+      Symbol(kBytesWritten): 0,
+      Symbol(kNeedDrain): false,
+      Symbol(corked): 0,
+      Symbol(kChunkedBuffer): [],
+      Symbol(kChunkedLength): 0,
+      Symbol(kSocket): [TLSSocket],
+      Symbol(kOutHeaders): [Object: null prototype],
+      Symbol(errored): null,
+      Symbol(kHighWaterMark): 16384,
+      Symbol(kRejectNonStandardBodyWrites): false,
+      Symbol(kPath): '/',
+      Symbol(kUniqueHeaders): null,
+      Symbol(kError): [Error]
+    },
+    _currentUrl: 'https://dool.egba.ba.gov.br/',
+    _timeout: null,
+    Symbol(shapeMode): true,
+    Symbol(kCapture): false
+  },
+  [cause]: Error: unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca
+      at TLSSocket.onConnectSecure (node:internal/tls/wrap:1768:34)
+      at TLSSocket.emit (node:events:509:28)
+      at TLSSocket._finishInit (node:internal/tls/wrap:1203:8)
+      at ssl.onhandshakedone (node:internal/tls/wrap:984:12) {
+    code: 'UNABLE_TO_VERIFY_LEAF_SIGNATURE'
+  }
+}
+Nada novo hoje. 
+---- 25/08/2026 12:33:22,51 ---- 
+Already up to date.
+Erro fatal: AxiosError: unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca
+    at AxiosError.from (C:\Users\gabri\Documents\monitor-doe-depaf\node_modules\axios\dist\node\axios.cjs:1478:24)
+    at RedirectableRequest.handleRequestError (C:\Users\gabri\Documents\monitor-doe-depaf\node_modules\axios\dist\node\axios.cjs:4427:25)
+    at RedirectableRequest.emit (node:events:521:24)
+    at eventHandlers.<computed> (C:\Users\gabri\Documents\monitor-doe-depaf\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:28)
+    at emitErrorEvent (node:_http_client:112:11)
+    at TLSSocket.socketErrorListener (node:_http_client:745:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\gabri\Documents\monitor-doe-depaf\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async discoverLatestEditionId (C:\Users\gabri\Documents\monitor-doe-depaf\scraper.js:83:15)
+    at async runOnce (C:\Users\gabri\Documents\monitor-doe-depaf\scraper.js:157:18)
+    at async main (C:\Users\gabri\Documents\monitor-doe-depaf\scraper.js:221:3) {
+  isAxiosError: true,
+  code: 'UNABLE_TO_VERIFY_LEAF_SIGNATURE',
+  config: [Object: null prototype] {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false,
+      legacyInterceptorReqResOrdering: true,
+      advertiseZstdAcceptEncoding: false,
+      validateStatusUndefinedResolves: true
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 20000,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'text/html,application/pdf,application/xhtml+xml,*/*',
+      'Content-Type': undefined,
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://dool.egba.ba.gov.br/',
+    allowAbsoluteUrls: true,
+    data: undefined
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Array],
+      timeout: undefined,
+      abort: undefined
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function (anonymous)],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      Symbol(kState): 17581054,
+      Symbol(kBufferedValue): null,
+      Symbol(kErroredValue): [Error]
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object: null prototype],
+      http2Options: undefined,
+      hostname: 'dool.egba.ba.gov.br',
+      port: '',
+      agent: undefined,
+      sensitiveHeaders: [],
+      insecureHTTPParser: false,
+      nativeProtocols: [Object],
+      pathname: '/'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _headerFilter: /^(?:Authorization|Proxy-Authorization|Cookie)$/i,
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      _header: 'GET / HTTP/1.1\r\n' +
+        'Accept: text/html,application/pdf,application/xhtml+xml,*/*\r\n' +
+        'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: dool.egba.ba.gov.br\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: false,
+      httpValidation: undefined,
+      joinDuplicateHeaders: undefined,
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'dool.egba.ba.gov.br',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      Symbol(shapeMode): false,
+      Symbol(kCapture): false,
+      Symbol(kBytesWritten): 0,
+      Symbol(kNeedDrain): false,
+      Symbol(corked): 0,
+      Symbol(kChunkedBuffer): [],
+      Symbol(kChunkedLength): 0,
+      Symbol(kSocket): [TLSSocket],
+      Symbol(kOutHeaders): [Object: null prototype],
+      Symbol(errored): null,
+      Symbol(kHighWaterMark): 16384,
+      Symbol(kRejectNonStandardBodyWrites): false,
+      Symbol(kPath): '/',
+      Symbol(kUniqueHeaders): null,
+      Symbol(kError): [Error]
+    },
+    _currentUrl: 'https://dool.egba.ba.gov.br/',
+    _timeout: null,
+    Symbol(shapeMode): true,
+    Symbol(kCapture): false
+  },
+  [cause]: Error: unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca
+      at TLSSocket.onConnectSecure (node:internal/tls/wrap:1768:34)
+      at TLSSocket.emit (node:events:509:28)
+      at TLSSocket._finishInit (node:internal/tls/wrap:1203:8)
+      at ssl.onhandshakedone (node:internal/tls/wrap:984:12) {
+    code: 'UNABLE_TO_VERIFY_LEAF_SIGNATURE'
+  }
+}
+Nada novo hoje. 
+---- 25/08/2026 14:38:32,57 ---- 
+From https://github.com/projetosdepaf/monitordool
+   9611826..d9d25a6  main       -> origin/main
+error: The following untracked working tree files would be overwritten by merge:
+	baixar-home-js.bat
+	baixar-mais.bat
+	corrigir-tudo.bat
+	diagnosticar-html.bat
+	diagnosticar-url.bat
+	diagnostico-hoje.bat
+	git-diagnostico-log.txt
+	log.txt
+	preencher-log.txt
+	sincronizar-log.txt
+	sincronizar.bat
+	tools/inspecionar.js
+Please move or remove them before you merge.
+Aborting
+Merge with strategy ort failed.
+2026-08-25T17:38:46.415Z - Edição 22428 (2026-08-25, nº 24463): 13 publicação(ões) em pastas relevantes.
+2026-08-25T17:38:55.421Z - Gravado. Total acumulado: 409 publicação(ões) em C:\Users\gabri\Documents\monitor-doe-depaf\docs\data\matches.json.
+[main 17a7d86] Atualiza dados do Diario (25/08/2026)
+ 2 files changed, 2054 insertions(+), 1884 deletions(-)
+To https://github.com/projetosdepaf/monitordool.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/projetosdepaf/monitordool.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.

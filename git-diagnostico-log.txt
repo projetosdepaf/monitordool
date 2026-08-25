@@ -1,0 +1,71 @@
+ 
+=== Pasta atual === 
+C:\Users\gabri\Documents\monitor-doe-depaf
+ 
+=== Repositorio remoto (deve apontar pro seu GitHub) === 
+origin	https://github.com/projetosdepaf/monitordool.git (fetch)
+origin	https://github.com/projetosdepaf/monitordool.git (push)
+ 
+=== Branch atual === 
+* main
+ 
+=== Ultimos commits salvos === 
+7dec391 Update scrape.yml
+add6a88 Create scrape.yml
+9730c33 Add files via upload
+ 
+=== O que ainda nao foi enviado === 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   docs/data/matches.json
+	modified:   docs/data/processed-editions.json
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   scraper.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	baixar-home-js.bat
+	baixar-mais.bat
+	diagnosticar-html.bat
+	diagnosticar-url.bat
+	diagnostico-git.bat
+	diagnostico-hoje.bat
+	diagnostico.bat
+	diagnostico/
+	git-diagnostico-log.txt
+	lib/dool.js
+	lib/portal.js
+	limpar-e-refazer-22.bat
+	log.txt
+	node_modules/
+	preencher-agosto.bat
+	preencher-log.txt
+	rodar-diario.bat
+	tools/backfill.js
+	tools/inspecionar.js
+	tools/remover-edicao.js
+
+ 
+=== Tentando salvar e enviar agora === 
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'gabri@Cíntia.(none)')
+Everything up-to-date
+ 
+=== Fim === 
