@@ -1,13 +1,15 @@
 name: Monitor DOE-BA DEPAF
 
+# O agendamento automático (cron) foi desligado de propósito: o site do
+# Diário Oficial bloqueia conexões vindas de servidores de nuvem, então essa
+# tentativa sempre falhava. A busca diária agora roda no computador
+# Cíntia (ver LEIA-ME.md). Este workflow fica só como registro / pra rodar
+# manualmente se algum dia quisermos testar de novo.
 on:
-  schedule:
-    # 11:00 UTC = 08:00 no horário da Bahia (UTC-3). Roda de segunda a sexta.
-    - cron: '0 11 * * 1-5'
-  workflow_dispatch: {} # permite rodar manualmente pelo botão "Run workflow" no GitHub
+  workflow_dispatch: {}
 
 permissions:
-  contents: write # precisa pra poder comitar o arquivo de dados atualizado
+  contents: write
 
 jobs:
   scrape:
