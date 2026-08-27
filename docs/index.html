@@ -418,7 +418,9 @@
     max-height: 10.5em; overflow: hidden;
   }
   .snippet--aberto { max-height: none; }
-  .snippet:not(.snippet--aberto)::after {
+  /* o degrade so entra quando sobrou texto escondido de verdade (--cortado);
+     senao ele apaga as ultimas linhas de um texto que cabe inteiro */
+  .snippet--cortado:not(.snippet--aberto)::after {
     content: ""; position: absolute; inset: auto 0 0 0; height: 3em;
     background: linear-gradient(to bottom, transparent, var(--card-superficie));
     pointer-events: none;
@@ -748,14 +750,24 @@
   // scrollHeight de elemento solto é sempre 0.
   function ajustarSnippets(container) {
     container.querySelectorAll('.snippet').forEach((snippetEl) => {
+      // Rodar de novo (numa mudanca de largura) nao pode duplicar botao nem
+      // fechar o que o usuario abriu: zera tudo, remede, e restaura o estado.
+      const estavaAberto = snippetEl.classList.contains('snippet--aberto');
+      const vizinho = snippetEl.nextElementSibling;
+      if (vizinho && vizinho.classList.contains('mais-texto')) vizinho.remove();
+      snippetEl.classList.remove('snippet--cortado', 'snippet--aberto');
+
       if (snippetEl.scrollHeight - snippetEl.clientHeight < 8) return;
+      snippetEl.classList.add('snippet--cortado');
+      if (estavaAberto) snippetEl.classList.add('snippet--aberto');
+
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'mais-texto';
       const rotulo = document.createElement('span');
-      rotulo.textContent = 'ver texto completo';
+      rotulo.textContent = estavaAberto ? 'recolher texto' : 'ver texto completo';
       btn.appendChild(rotulo);
-      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-expanded', String(estavaAberto));
       btn.addEventListener('click', () => {
         const aberto = snippetEl.classList.toggle('snippet--aberto');
         btn.setAttribute('aria-expanded', String(aberto));
@@ -764,6 +776,14 @@
       snippetEl.insertAdjacentElement('afterend', btn);
     });
   }
+
+  // Mudar a largura muda quantas linhas o texto ocupa: o que cabia passa a
+  // sobrar e vice-versa. Remede depois que o usuario para de arrastar.
+  let debounceLargura;
+  window.addEventListener('resize', () => {
+    clearTimeout(debounceLargura);
+    debounceLargura = setTimeout(() => ajustarSnippets(document.getElementById('lista')), 200);
+  });
 
   function renderizar() {
     const listaEl = document.getElementById('lista');
