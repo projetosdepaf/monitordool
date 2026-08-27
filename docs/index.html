@@ -440,8 +440,18 @@
     cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease;
   }
   .botao:hover { border-color: var(--petroleo); background: var(--superficie-2); }
-  .botao--fantasma { border-color: transparent; background: transparent; color: var(--tinta-2); }
-  .botao--fantasma:hover { background: var(--superficie-2); color: var(--tinta); }
+  /* Fica logo embaixo do texto cortado, não na fila de botões: é continuação
+     da leitura, não uma ação do cartão. */
+  .mais-texto {
+    display: inline-flex; align-items: center; gap: var(--e-1);
+    font-family: var(--f-corpo); font-size: var(--t-sm); font-weight: 600;
+    color: var(--petroleo); background: none; border: none;
+    padding: var(--e-1) 0; margin: 0 0 var(--e-3); cursor: pointer;
+  }
+  .mais-texto span { text-decoration: underline; text-underline-offset: 3px; }
+  .mais-texto:hover { color: var(--tinta); }
+  .mais-texto::after { content: "▾"; }
+  .mais-texto[aria-expanded="true"]::after { content: "▴"; }
   .botao--marcado { background: var(--superficie-2); color: var(--tinta-2); border-color: var(--linha); }
 
   .carregar-mais {
@@ -741,15 +751,17 @@
       if (snippetEl.scrollHeight - snippetEl.clientHeight < 8) return;
       const btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'botao botao--fantasma';
-      btn.textContent = 'ver texto completo';
+      btn.className = 'mais-texto';
+      const rotulo = document.createElement('span');
+      rotulo.textContent = 'ver texto completo';
+      btn.appendChild(rotulo);
       btn.setAttribute('aria-expanded', 'false');
       btn.addEventListener('click', () => {
         const aberto = snippetEl.classList.toggle('snippet--aberto');
         btn.setAttribute('aria-expanded', String(aberto));
-        btn.textContent = aberto ? 'recolher texto' : 'ver texto completo';
+        rotulo.textContent = aberto ? 'recolher texto' : 'ver texto completo';
       });
-      snippetEl.parentElement.querySelector('.card__acoes').appendChild(btn);
+      snippetEl.insertAdjacentElement('afterend', btn);
     });
   }
 
