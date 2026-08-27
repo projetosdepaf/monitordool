@@ -4,173 +4,589 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Monitor DOE-BA · DEPAF</title>
+<meta name="description" content="Publicações do Diário Oficial do Estado da Bahia que mencionam a Polícia Civil da Bahia, com destaque para as que citam a DEPAF." />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#0b2e33" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* ==========================================================================
+     1. TOKENS — tudo que é cor, espaço, raio e tipografia mora aqui.
+        Nenhum valor cru (#hex, px solto) deve aparecer nos componentes abaixo.
+     ========================================================================== */
   :root {
-    --petroleo: #0b2e33;
-    --petroleo-2: #0f3d44;
-    --dourado: #c9a227;
-    --dourado-claro: #e8c968;
-    --bg: #f4f1ea;
-    --card-bg: #ffffff;
-    --texto: #16211f;
-    --texto-suave: #57625f;
-    --borda: #e1ddd0;
-    --erro: #a63d2f;
+    color-scheme: light;
+
+    /* -- marca ------------------------------------------------------------ */
+    --petroleo:        #0b2e33;
+    --dourado:         #c9a227;   /* só decorativo: contraste baixo pra texto */
+    --dourado-claro:   #f2d98a;
+
+    /* -- superfícies ------------------------------------------------------ */
+    --bg:              #f7f6f2;
+    --superficie:      #ffffff;
+    --superficie-2:    #f1efe8;
+    --superficie-3:    #e9e6dc;
+
+    /* -- texto (todos >= 4.5:1 sobre --bg e --superficie) ------------------ */
+    --tinta:           #131e1c;   /* corpo                      ~15:1 */
+    --tinta-2:         #414e4b;   /* apoio, rótulos             ~8:1  */
+    --tinta-3:         #5b6764;   /* metadados, só >= 13px      ~5.4:1 */
+
+    /* -- linhas ----------------------------------------------------------- */
+    --linha:           #e2ded1;
+    --linha-forte:     #cbc5b4;
+    --foco:            #0f6f7d;
+
+    --erro:            #8f2f22;
+    --erro-bg:         #fbeae6;
+
+    /* -- tipografia ------------------------------------------------------- */
+    --f-titulo:  'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+    --f-corpo:   'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+    --f-mono:    'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+    --t-2xs: 0.75rem;    /* 12px — só rótulo em caixa alta */
+    --t-xs:  0.8125rem;  /* 13px — metadados               */
+    --t-sm:  0.875rem;   /* 14px — UI, botões              */
+    --t-md:  0.9375rem;  /* 15px — corpo secundário        */
+    --t-lg:  1rem;       /* 16px — corpo de leitura        */
+    --t-xl:  1.375rem;
+
+    --lh-apertado: 1.25;
+    --lh-corpo:    1.6;
+    --lh-leitura:  1.68;
+
+    /* -- espaço (escala de 4) --------------------------------------------- */
+    --e-1: 4px;  --e-2: 8px;  --e-3: 12px; --e-4: 16px;
+    --e-5: 20px; --e-6: 24px; --e-8: 32px; --e-10: 40px;
+
+    /* -- raio e elevação -------------------------------------------------- */
+    --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-pill: 999px;
+    --sombra-1: 0 1px 2px rgba(11, 46, 51, 0.05), 0 1px 3px rgba(11, 46, 51, 0.04);
+    --sombra-2: 0 2px 4px rgba(11, 46, 51, 0.06), 0 8px 20px rgba(11, 46, 51, 0.07);
+    --sombra-topo: 0 1px 0 var(--linha), 0 6px 16px rgba(11, 46, 51, 0.06);
+
+    --largura: 1080px;
   }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--texto); font-family: 'IBM Plex Sans', system-ui, sans-serif; }
 
-  header { position: relative; background: linear-gradient(135deg, var(--petroleo) 0%, var(--petroleo-2) 100%); color: #fff; padding: 26px 32px 30px; overflow: hidden; }
-  header::after { content: ""; position: absolute; top: -60%; right: -6%; width: 140px; height: 280%; background: var(--dourado); opacity: 0.85; transform: rotate(20deg); }
-  header .inner { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  header .titulo-bloco h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.55rem; letter-spacing: 0.01em; margin: 0 0 4px; }
-  header .titulo-bloco p { margin: 0; color: #cfe3e1; font-size: 0.88rem; max-width: 46ch; }
-  header .stats-resumo { display: flex; gap: 22px; font-family: 'Space Grotesk', sans-serif; }
-  header .stats-resumo .num { font-size: 1.5rem; font-weight: 700; line-height: 1; color: var(--dourado-claro); }
-  header .stats-resumo .lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: #cfe3e1; margin-top: 3px; }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --petroleo:      #7fd4d8;
+      --bg:            #0d1514;
+      --superficie:    #16211f;
+      --superficie-2:  #1c2927;
+      --superficie-3:  #243330;
+      --tinta:         #e9efed;
+      --tinta-2:       #b6c4c0;
+      --tinta-3:       #93a29e;
+      --linha:         #263532;
+      --linha-forte:   #3a4b47;
+      --foco:          #6fd0da;
+      --erro:          #ff9f8d;
+      --erro-bg:       #35201c;
+      --sombra-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --sombra-2: 0 2px 6px rgba(0, 0, 0, 0.35), 0 10px 24px rgba(0, 0, 0, 0.3);
+      --sombra-topo: 0 1px 0 var(--linha), 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+  }
 
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 22px 32px 60px; }
+  /* ==========================================================================
+     2. BASE
+     ========================================================================== */
+  *, *::before, *::after { box-sizing: border-box; }
 
-  .painel-filtros { background: var(--card-bg); border: 1px solid var(--borda); border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
-  .filtro-linha { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-  .filtro-linha + .filtro-linha { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--borda); }
-  .filtro-titulo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--texto-suave); min-width: 92px; }
+  html { -webkit-text-size-adjust: 100%; }
 
-  .segmentado { display: inline-flex; border: 1px solid var(--petroleo); border-radius: 999px; overflow: hidden; }
-  .segmentado button { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.82rem; padding: 7px 16px; border: none; background: #fff; color: var(--petroleo); cursor: pointer; }
-  .segmentado button.active { background: var(--petroleo); color: #fff; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--tinta);
+    font-family: var(--f-corpo);
+    font-size: var(--t-lg);
+    line-height: var(--lh-corpo);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-  .periodo-campos { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .periodo-campos input[type=date] { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; padding: 6px 8px; border: 1px solid var(--borda); border-radius: 6px; background: #fff; color: var(--texto); }
-  .periodo-campos span.ate { font-size: 0.8rem; color: var(--texto-suave); }
-  .chip-preset { font-family: 'IBM Plex Sans', sans-serif; font-size: 0.78rem; font-weight: 500; padding: 6px 12px; border: 1px solid var(--borda); border-radius: 6px; background: #fff; color: var(--texto-suave); cursor: pointer; }
-  .chip-preset:hover { border-color: var(--petroleo); color: var(--petroleo); }
+  /* Um anel de foco só, igual em tudo — nada de outline sumindo. */
+  :focus-visible {
+    outline: 2px solid var(--foco);
+    outline-offset: 2px;
+    border-radius: var(--r-sm);
+  }
 
-  .tipos-grid { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
-  .chip-tipo { font-family: 'IBM Plex Sans', sans-serif; font-size: 0.78rem; font-weight: 500; padding: 6px 11px; border-radius: 6px; border: 1px solid var(--borda); background: #fff; color: var(--texto-suave); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-  .chip-tipo .contagem { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--texto-suave); }
-  .chip-tipo.selecionado { background: var(--petroleo); border-color: var(--petroleo); color: #fff; }
-  .chip-tipo.selecionado .contagem { color: var(--dourado-claro); }
-  .chip-tipo.zero { opacity: 0.4; cursor: default; }
-  .link-mini { font-size: 0.76rem; color: var(--texto-suave); text-decoration: underline; cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; }
+  button, input, select { font: inherit; color: inherit; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition: none !important; animation: none !important; scroll-behavior: auto !important;
+    }
+  }
+
+  .visualmente-oculto {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  .pular-para-conteudo {
+    position: absolute; left: var(--e-4); top: -60px; z-index: 20;
+    background: var(--superficie); color: var(--tinta);
+    padding: var(--e-2) var(--e-4); border-radius: var(--r-sm);
+    box-shadow: var(--sombra-2); text-decoration: none; font-weight: 600;
+    transition: top 0.15s ease;
+  }
+  .pular-para-conteudo:focus { top: var(--e-4); }
+
+  .envelope { max-width: var(--largura); margin: 0 auto; padding-inline: var(--e-6); }
+
+  /* ==========================================================================
+     3. CABEÇALHO
+     ========================================================================== */
+  .topo {
+    position: relative;
+    background: linear-gradient(135deg, #0b2e33 0%, #12454d 60%, #16545c 100%);
+    color: #f2f7f6;
+    padding-block: var(--e-8) var(--e-10);
+    overflow: hidden;
+  }
+  /* faixa dourada — puramente ornamental */
+  .topo::after {
+    content: ""; position: absolute; top: -60%; right: -4%;
+    width: 120px; height: 280%;
+    background: linear-gradient(180deg, var(--dourado), #b08d1c);
+    opacity: 0.9; transform: rotate(20deg); pointer-events: none;
+  }
+  .topo__inner {
+    position: relative; z-index: 1;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: var(--e-8); flex-wrap: wrap;
+  }
+  .topo__olho {
+    font-family: var(--f-mono); font-size: var(--t-2xs);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--dourado-claro); margin: 0 0 var(--e-2);
+  }
+  .topo h1 {
+    font-family: var(--f-titulo); font-weight: 700;
+    font-size: clamp(1.5rem, 1.1rem + 1.6vw, 1.75rem);
+    line-height: var(--lh-apertado); letter-spacing: -0.015em;
+    margin: 0 0 var(--e-3);
+  }
+  .topo__descricao {
+    margin: 0; max-width: 52ch;
+    font-size: var(--t-md); line-height: var(--lh-leitura); color: #cfe3e1;
+  }
+
+  .indicadores { display: flex; gap: var(--e-6); flex-wrap: wrap; margin: 0; }
+  /* column-reverse: no HTML o rótulo (dt) vem antes do valor (dd), como manda
+     a semântica de <dl>; visualmente o número aparece em cima. */
+  .indicador { display: flex; flex-direction: column-reverse; }
+  .indicador__num {
+    margin: 0;
+    font-family: var(--f-titulo); font-size: var(--t-xl); font-weight: 700;
+    line-height: 1; color: var(--dourado-claro); font-variant-numeric: tabular-nums;
+  }
+  .indicador__lbl {
+    margin-top: var(--e-2);
+    font-size: var(--t-2xs); text-transform: uppercase; letter-spacing: 0.08em;
+    color: #cfe3e1;
+  }
+
+  /* ==========================================================================
+     4. PAINEL DE FILTROS
+     ========================================================================== */
+  .conteudo { padding-block: var(--e-6) var(--e-10); }
+
+  .filtros {
+    background: var(--superficie);
+    border: 1px solid var(--linha);
+    border-radius: var(--r-lg);
+    box-shadow: var(--sombra-1);
+    padding: var(--e-5) var(--e-6);
+    margin-bottom: var(--e-5);
+  }
+  .filtros__linha { display: flex; align-items: center; gap: var(--e-4); flex-wrap: wrap; }
+  .filtros__linha + .filtros__linha {
+    margin-top: var(--e-4); padding-top: var(--e-4); border-top: 1px solid var(--linha);
+  }
+  .filtros__rotulo {
+    flex: 0 0 96px;
+    font-family: var(--f-titulo); font-weight: 600;
+    font-size: var(--t-2xs); text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--tinta-2);
+  }
+  .filtros__dica {
+    font-size: var(--t-xs); color: var(--tinta-3); line-height: var(--lh-corpo);
+    margin: var(--e-2) 0 0; padding-left: calc(96px + var(--e-4));
+  }
+  .filtros__campo { display: flex; align-items: center; gap: var(--e-2); flex-wrap: wrap; }
+
+  /* --- controle segmentado: um trilho só, sem bordas competindo ---------- */
+  .segmentado {
+    display: inline-flex; gap: var(--e-1);
+    background: var(--superficie-2); border-radius: var(--r-pill); padding: var(--e-1);
+  }
+  .segmentado button {
+    font-family: var(--f-titulo); font-weight: 600; font-size: var(--t-sm);
+    padding: var(--e-2) var(--e-4); border: none; border-radius: var(--r-pill);
+    background: transparent; color: var(--tinta-2); cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .segmentado button:hover { color: var(--tinta); background: var(--superficie-3); }
+  .segmentado button[aria-pressed="true"] {
+    background: var(--petroleo); color: var(--superficie); box-shadow: var(--sombra-1);
+  }
+
+  /* --- campos ----------------------------------------------------------- */
+  .campo-data {
+    font-family: var(--f-mono); font-size: var(--t-sm);
+    padding: var(--e-2) var(--e-3);
+    border: 1px solid var(--linha-forte); border-radius: var(--r-sm);
+    background: var(--superficie); color: var(--tinta);
+  }
+  .ate { font-size: var(--t-sm); color: var(--tinta-3); }
+
+  .campo-busca {
+    flex: 1; min-width: 220px;
+    font-size: var(--t-md);
+    padding: var(--e-3) var(--e-4);
+    border: 1px solid var(--linha-forte); border-radius: var(--r-md);
+    background: var(--superficie); color: var(--tinta);
+  }
+  .campo-busca::placeholder { color: var(--tinta-3); }
+
+  /* --- chips: preenchimento suave no lugar de borda pesada --------------- */
+  .chip {
+    font-family: var(--f-corpo); font-size: var(--t-sm); font-weight: 500;
+    padding: var(--e-2) var(--e-3);
+    border: 1px solid transparent; border-radius: var(--r-pill);
+    background: var(--superficie-2); color: var(--tinta-2);
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .chip:hover { background: var(--superficie-3); color: var(--tinta); }
+  .chip[aria-pressed="true"] { background: var(--petroleo); color: var(--superficie); }
+
+  .tipos { display: flex; flex-wrap: wrap; gap: var(--e-2); flex: 1; min-width: 240px; }
+  .chip-tipo {
+    display: inline-flex; align-items: center; gap: var(--e-2);
+    font-size: var(--t-sm); font-weight: 500;
+    padding: var(--e-2) var(--e-3);
+    border: 1px solid transparent; border-radius: var(--r-pill);
+    background: var(--superficie-2); color: var(--tinta-2);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .chip-tipo:hover { background: var(--superficie-3); color: var(--tinta); }
+  .chip-tipo .contagem {
+    font-family: var(--f-mono); font-size: var(--t-2xs);
+    font-variant-numeric: tabular-nums; color: var(--tinta-3);
+  }
+  .chip-tipo[aria-pressed="true"] {
+    background: var(--petroleo); color: var(--superficie); border-color: var(--petroleo);
+  }
+  .chip-tipo[aria-pressed="true"] .contagem { color: var(--dourado-claro); }
+  .chip-tipo.zero { opacity: 0.45; }
+
+  .link-mini {
+    font-size: var(--t-sm); color: var(--tinta-2); font-family: inherit;
+    text-decoration: underline; text-underline-offset: 3px;
+    background: none; border: none; padding: var(--e-1) 0; cursor: pointer;
+  }
   .link-mini:hover { color: var(--petroleo); }
 
-  .busca-linha { display: flex; align-items: center; gap: 10px; flex: 1; }
-  .busca-linha input[type=search] { flex: 1; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.88rem; padding: 8px 12px; border: 1px solid var(--borda); border-radius: 6px; background: #fff; color: var(--texto); min-width: 180px; }
-  .toggle-linha { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--texto-suave); cursor: pointer; user-select: none; }
-  .toggle-linha input { accent-color: var(--petroleo); width: 15px; height: 15px; }
+  .interruptor {
+    display: inline-flex; align-items: center; gap: var(--e-2);
+    font-size: var(--t-sm); color: var(--tinta-2); cursor: pointer; user-select: none;
+  }
+  .interruptor input { accent-color: var(--foco); width: 16px; height: 16px; }
 
-  .status-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
-  .status { font-size: 0.82rem; color: var(--texto-suave); font-family: 'IBM Plex Mono', monospace; }
+  /* ==========================================================================
+     5. BARRA DE STATUS (gruda no topo ao rolar)
+     ========================================================================== */
+  .status-bar {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: var(--e-3); flex-wrap: wrap;
+    margin-bottom: var(--e-4);
+    padding: var(--e-3) var(--e-4);
+    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--linha); border-radius: var(--r-md);
+    box-shadow: var(--sombra-topo);
+  }
+  .status {
+    margin: 0;
+    font-family: var(--f-mono); font-size: var(--t-xs); color: var(--tinta-2);
+    font-variant-numeric: tabular-nums;
+  }
 
-  .card { background: var(--card-bg); border: 1px solid var(--borda); border-left: 4px solid var(--borda); border-radius: 8px; padding: 15px 18px; margin-bottom: 10px; }
-  .card.pcba { border-left-color: var(--dourado); }
-  .card.depaf { border-left-color: var(--petroleo); }
-  .card.visto { opacity: 0.55; }
-  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
-  .badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-  .badge { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.7rem; letter-spacing: 0.02em; padding: 3px 9px; border-radius: 5px; background: var(--bg); border: 1px solid var(--borda); color: var(--texto-suave); }
-  .badge-depaf { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.02em; padding: 3px 9px; border-radius: 5px; background: var(--petroleo); color: var(--dourado-claro); }
-  .data { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--texto-suave); white-space: nowrap; }
-  .snippet { font-size: 0.92rem; line-height: 1.55; margin: 6px 0 12px; }
-  .snippet mark { background: var(--dourado-claro); padding: 0 2px; border-radius: 3px; }
-  .card-actions { display: flex; gap: 10px; align-items: center; }
-  .card-actions a, .card-actions button { font-family: 'IBM Plex Sans', sans-serif; font-size: 0.78rem; font-weight: 500; text-decoration: none; border: 1px solid var(--borda); background: #fff; color: var(--texto); padding: 5px 11px; border-radius: 6px; cursor: pointer; }
-  .card-actions a:hover, .card-actions button:hover { border-color: var(--petroleo); }
+  /* ==========================================================================
+     6. CARTÃO DE PUBLICAÇÃO
+     ========================================================================== */
+  .lista { display: flex; flex-direction: column; gap: var(--e-3); }
 
-  .carregar-mais { display: block; margin: 18px auto 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.85rem; padding: 10px 22px; border-radius: 999px; border: 1px solid var(--petroleo); background: #fff; color: var(--petroleo); cursor: pointer; }
-  .carregar-mais:hover { background: var(--petroleo); color: #fff; }
+  .card {
+    --card-superficie: var(--superficie);
+    position: relative;
+    background: var(--card-superficie);
+    border: 1px solid var(--linha);
+    border-radius: var(--r-md);
+    box-shadow: var(--sombra-1);
+    padding: var(--e-4) var(--e-5);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover { box-shadow: var(--sombra-2); border-color: var(--linha-forte); }
 
-  .empty, .erro { text-align: center; padding: 40px 20px; color: var(--texto-suave); font-size: 0.95rem; }
-  .erro { color: var(--erro); }
-  .rodape { max-width: 1040px; margin: 20px auto 0; padding: 16px 32px 40px; border-top: 1px solid var(--borda); font-size: 0.78rem; color: var(--texto-suave); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .rodape a { color: var(--texto-suave); }
+  /* DEPAF ganha um filete dourado — único destaque de cor na borda */
+  .card--depaf { border-left: 3px solid var(--dourado); }
 
-  @media (max-width: 640px) {
-    header .inner { flex-direction: column; align-items: flex-start; }
-    .filtro-linha { align-items: flex-start; flex-direction: column; }
-    .filtro-titulo { min-width: 0; }
+  /* Já visto: recua a ênfase pela superfície, não apagando o texto. */
+  .card--visto { --card-superficie: var(--superficie-2); box-shadow: none; }
+  .card--visto .snippet { color: var(--tinta-2); }
+
+  .card__topo {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: var(--e-3); flex-wrap: wrap; margin-bottom: var(--e-3);
+  }
+  .selos { display: flex; gap: var(--e-2); flex-wrap: wrap; align-items: center; }
+
+  /* --- selos por tipo: um molde só, muda a matiz --------------------------
+     Cada tipo declara --matiz/--sat; o preenchimento e o texto saem da mesma
+     fórmula, então todo selo novo nasce com contraste garantido. */
+  .selo {
+    --matiz: 200; --sat: 8%;
+    font-family: var(--f-titulo); font-weight: 600;
+    font-size: var(--t-2xs); letter-spacing: 0.01em;
+    padding: var(--e-1) var(--e-2); border-radius: var(--r-sm);
+    background: hsl(var(--matiz) var(--sat) 94%);
+    color: hsl(var(--matiz) calc(var(--sat) + 22%) 26%);
+    white-space: nowrap;
+  }
+  @media (prefers-color-scheme: dark) {
+    .selo {
+      background: hsl(var(--matiz) var(--sat) 17%);
+      color: hsl(var(--matiz) calc(var(--sat) + 10%) 76%);
+    }
+  }
+  .selo[data-t="nomeacao"]           { --matiz: 150; --sat: 38%; }
+  .selo[data-t="exoneracao"]         { --matiz: 12;  --sat: 55%; }
+  .selo[data-t="designacao"]         { --matiz: 212; --sat: 45%; }
+  .selo[data-t="aposentadoria"]      { --matiz: 272; --sat: 35%; }
+  .selo[data-t="licenca"]            { --matiz: 38;  --sat: 55%; }
+  .selo[data-t="cessao-remocao"]     { --matiz: 186; --sat: 40%; }
+  .selo[data-t="convocacao"]         { --matiz: 246; --sat: 35%; }
+  .selo[data-t="diarias-viagem"]     { --matiz: 196; --sat: 45%; }
+  .selo[data-t="retificacao"]        { --matiz: 30;  --sat: 22%; }
+  .selo[data-t="edital"]             { --matiz: 330; --sat: 38%; }
+  .selo[data-t="contrato-licitacao"] { --matiz: 82;  --sat: 34%; }
+  .selo[data-t="portaria"]           { --matiz: 216; --sat: 20%; }
+  .selo[data-t="ato-decreto"]        { --matiz: 190; --sat: 30%; }
+  .selo[data-t="outro"]              { --matiz: 200; --sat: 8%;  }
+
+  .selo--neutro {
+    font-family: var(--f-mono); font-weight: 400;
+    background: var(--superficie-2); color: var(--tinta-3);
+  }
+  .selo--depaf {
+    font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    background: #0b2e33; color: var(--dourado-claro);
+  }
+  @media (prefers-color-scheme: dark) {
+    .selo--depaf { background: #0f3d44; color: var(--dourado-claro); }
+  }
+
+  .data {
+    font-family: var(--f-mono); font-size: var(--t-xs);
+    color: var(--tinta-3); white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+
+  /* --- texto da publicação: respeita as quebras de linha do Diário ------- */
+  .snippet {
+    position: relative;
+    font-size: var(--t-md); line-height: var(--lh-leitura);
+    color: var(--tinta); margin: 0 0 var(--e-3);
+    white-space: pre-wrap; overflow-wrap: anywhere;
+    max-height: calc(var(--lh-leitura) * 6em); overflow: hidden;
+  }
+  .snippet--aberto { max-height: none; }
+  .snippet:not(.snippet--aberto)::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 3em;
+    background: linear-gradient(to bottom, transparent, var(--card-superficie));
+    pointer-events: none;
+  }
+  .snippet mark {
+    background: hsl(45 85% 78%); color: #2a2103;
+    padding: 0 3px; border-radius: 3px; font-weight: 600;
+  }
+  @media (prefers-color-scheme: dark) {
+    .snippet mark { background: hsl(45 62% 29%); color: #fdf3d8; }
+  }
+
+  .card__acoes { display: flex; gap: var(--e-2); align-items: center; flex-wrap: wrap; }
+  .botao {
+    display: inline-flex; align-items: center; gap: var(--e-2);
+    font-size: var(--t-sm); font-weight: 500; text-decoration: none;
+    padding: var(--e-2) var(--e-3); border-radius: var(--r-sm);
+    border: 1px solid var(--linha-forte); background: var(--superficie); color: var(--tinta);
+    cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .botao:hover { border-color: var(--petroleo); background: var(--superficie-2); }
+  .botao--fantasma { border-color: transparent; background: transparent; color: var(--tinta-2); }
+  .botao--fantasma:hover { background: var(--superficie-2); color: var(--tinta); }
+  .botao--marcado { background: var(--superficie-2); color: var(--tinta-2); border-color: var(--linha); }
+
+  .carregar-mais {
+    display: block; margin: var(--e-6) auto 0;
+    font-family: var(--f-titulo); font-weight: 600; font-size: var(--t-sm);
+    padding: var(--e-3) var(--e-6); border-radius: var(--r-pill);
+    border: 1px solid var(--linha-forte); background: var(--superficie); color: var(--petroleo);
+    cursor: pointer; transition: background 0.15s ease, color 0.15s ease;
+  }
+  .carregar-mais:hover { background: var(--petroleo); color: var(--superficie); border-color: var(--petroleo); }
+
+  /* ==========================================================================
+     7. ESTADOS VAZIOS E RODAPÉ
+     ========================================================================== */
+  .vazio, .erro {
+    text-align: center; padding: var(--e-10) var(--e-5); margin: 0;
+    color: var(--tinta-2); font-size: var(--t-md);
+    background: var(--superficie); border: 1px dashed var(--linha-forte); border-radius: var(--r-md);
+  }
+  .erro { color: var(--erro); background: var(--erro-bg); border-style: solid; border-color: var(--erro); }
+
+  .esqueleto {
+    height: 108px; border-radius: var(--r-md);
+    background: linear-gradient(90deg, var(--superficie) 0%, var(--superficie-2) 50%, var(--superficie) 100%);
+    background-size: 200% 100%; animation: brilho 1.4s ease-in-out infinite;
+  }
+  @keyframes brilho { to { background-position: -200% 0; } }
+
+  .rodape {
+    border-top: 1px solid var(--linha);
+    padding-block: var(--e-5) var(--e-10);
+    font-size: var(--t-xs); line-height: var(--lh-corpo); color: var(--tinta-3);
+    display: flex; justify-content: space-between; gap: var(--e-4); flex-wrap: wrap;
+  }
+  .rodape a { color: var(--tinta-2); text-underline-offset: 3px; }
+  .rodape p { margin: 0; max-width: 60ch; }
+
+  /* ==========================================================================
+     8. RESPONSIVO
+     ========================================================================== */
+  @media (max-width: 720px) {
+    .envelope { padding-inline: var(--e-4); }
+    .topo { padding-block: var(--e-6) var(--e-8); }
+    .topo::after { display: none; }
+    .topo__inner { flex-direction: column; align-items: flex-start; gap: var(--e-6); }
+    .indicadores { gap: var(--e-5); }
+    .filtros { padding: var(--e-4); }
+    .filtros__linha { flex-direction: column; align-items: flex-start; gap: var(--e-3); }
+    .filtros__rotulo { flex-basis: auto; }
+    .filtros__dica { padding-left: 0; }
+    .card__topo { align-items: flex-start; }
   }
 </style>
 </head>
 <body>
-  <header>
-    <div class="inner">
-      <div class="titulo-bloco">
+  <a class="pular-para-conteudo" href="#lista">Pular para as publicações</a>
+
+  <header class="topo">
+    <div class="topo__inner envelope">
+      <div>
+        <p class="topo__olho">Diário Oficial do Estado da Bahia</p>
         <h1>Monitor DOE-BA · DEPAF</h1>
-        <p>Publicações do Diário Oficial do Estado da Bahia mencionando a Polícia Civil da Bahia, com destaque pra o que cita a DEPAF diretamente.</p>
+        <p class="topo__descricao">
+          Publicações que mencionam a Polícia Civil da Bahia, com destaque para as
+          que citam a DEPAF diretamente.
+        </p>
       </div>
-      <div class="stats-resumo">
-        <div><div class="num" id="stat-total">–</div><div class="lbl">publicações</div></div>
-        <div><div class="num" id="stat-depaf">–</div><div class="lbl">DEPAF direto</div></div>
-        <div><div class="num" id="stat-atualizado">–</div><div class="lbl">edição mais recente</div></div>
-      </div>
+
+      <dl class="indicadores">
+        <div class="indicador">
+          <dt class="indicador__lbl">publicações</dt>
+          <dd class="indicador__num" id="stat-total">–</dd>
+        </div>
+        <div class="indicador">
+          <dt class="indicador__lbl">DEPAF direto</dt>
+          <dd class="indicador__num" id="stat-depaf">–</dd>
+        </div>
+        <div class="indicador">
+          <dt class="indicador__lbl">edição mais recente</dt>
+          <dd class="indicador__num" id="stat-atualizado">–</dd>
+        </div>
+      </dl>
     </div>
   </header>
 
-  <div class="wrap">
+  <main class="conteudo envelope">
+    <h2 class="visualmente-oculto">Filtros</h2>
 
-    <div class="painel-filtros">
-      <div class="filtro-linha">
-        <span class="filtro-titulo">Escopo</span>
+    <section class="filtros" aria-label="Filtros de busca">
+      <div class="filtros__linha" role="group" aria-labelledby="rot-escopo">
+        <span class="filtros__rotulo" id="rot-escopo">Escopo</span>
         <div class="segmentado">
-          <button class="active" data-escopo="todos-pcba">Toda Polícia Civil</button>
-          <button data-escopo="so-depaf">Só DEPAF</button>
+          <button type="button" data-escopo="todos-pcba" aria-pressed="true">Toda Polícia Civil</button>
+          <button type="button" data-escopo="so-depaf" aria-pressed="false">Só DEPAF</button>
         </div>
       </div>
 
-      <div class="filtro-linha">
-        <span class="filtro-titulo">Período</span>
-        <div class="periodo-campos">
-          <input type="date" id="data-de" />
+      <div class="filtros__linha" role="group" aria-labelledby="rot-periodo">
+        <span class="filtros__rotulo" id="rot-periodo">Período</span>
+        <div class="filtros__campo">
+          <label class="visualmente-oculto" for="data-de">Data inicial</label>
+          <input class="campo-data" type="date" id="data-de" />
           <span class="ate">até</span>
-          <input type="date" id="data-ate" />
-          <button class="chip-preset" data-preset="7">Últimos 7 dias</button>
-          <button class="chip-preset" data-preset="30">Últimos 30 dias</button>
-          <button class="chip-preset" data-preset="mes">Este mês</button>
-          <button class="chip-preset" data-preset="tudo">Tudo</button>
+          <label class="visualmente-oculto" for="data-ate">Data final</label>
+          <input class="campo-data" type="date" id="data-ate" />
+          <button type="button" class="chip" data-preset="7" aria-pressed="false">Últimos 7 dias</button>
+          <button type="button" class="chip" data-preset="30" aria-pressed="false">Últimos 30 dias</button>
+          <button type="button" class="chip" data-preset="mes" aria-pressed="false">Este mês</button>
+          <button type="button" class="chip" data-preset="tudo" aria-pressed="true">Tudo</button>
         </div>
       </div>
 
-      <div class="filtro-linha">
-        <span class="filtro-titulo">Tipo</span>
-        <div class="tipos-grid" id="tipos-grid"></div>
-        <div>
-          <button class="link-mini" data-tipos-acao="todos">ver todos</button>
-        </div>
+      <div class="filtros__linha" role="group" aria-labelledby="rot-tipo">
+        <span class="filtros__rotulo" id="rot-tipo">Tipo</span>
+        <div class="tipos" id="tipos-grid"></div>
+        <button type="button" class="link-mini" data-tipos-acao="todos">ver todos</button>
       </div>
-      <div class="filtro-linha" style="padding-top:0;border-top:none;margin-top:2px">
-        <span class="filtro-titulo"></span>
-        <span style="font-size:0.74rem;color:var(--texto-suave)">clique num tipo pra ver só ele · Ctrl+clique pra combinar mais de um · "ver todos" volta a mostrar tudo</span>
-      </div>
+      <p class="filtros__dica">
+        Clique num tipo para ver só ele · Ctrl+clique para combinar mais de um · “ver todos” volta a mostrar tudo.
+      </p>
 
-      <div class="filtro-linha">
-        <span class="filtro-titulo">Buscar</span>
-        <div class="busca-linha">
-          <input type="search" id="busca-texto" placeholder="Buscar palavra no texto da publicação…" />
-        </div>
-        <label class="toggle-linha">
+      <div class="filtros__linha" role="group" aria-labelledby="rot-busca">
+        <span class="filtros__rotulo" id="rot-busca">Buscar</span>
+        <label class="visualmente-oculto" for="busca-texto">Buscar palavra no texto da publicação</label>
+        <input class="campo-busca" type="search" id="busca-texto" placeholder="Buscar palavra no texto da publicação…" />
+        <label class="interruptor">
           <input type="checkbox" id="chk-ocultar-vistas" />
-          Ocultar as que eu já vi (neste navegador)
+          Ocultar as que eu já vi
         </label>
       </div>
-    </div>
+    </section>
 
     <div class="status-bar">
-      <div class="status" id="status">carregando…</div>
+      <p class="status" id="status" role="status" aria-live="polite">carregando…</p>
     </div>
 
-    <div id="lista"></div>
-    <button class="carregar-mais" id="btn-carregar-mais" style="display:none">Carregar mais</button>
-  </div>
+    <h2 class="visualmente-oculto">Publicações encontradas</h2>
+    <div class="lista" id="lista">
+      <div class="esqueleto"></div>
+      <div class="esqueleto"></div>
+      <div class="esqueleto"></div>
+    </div>
+    <button type="button" class="carregar-mais" id="btn-carregar-mais" hidden>Carregar mais</button>
+  </main>
 
-  <div class="rodape">
-    <span>"Marcar como visto" é só uma lembrança pessoal salva neste navegador — não afeta o que outras pessoas do DEPAF veem.</span>
-    <span>Fonte: <a href="https://dool.egba.ba.gov.br/" target="_blank" rel="noopener">Diário Oficial do Estado da Bahia</a></span>
-  </div>
+  <footer class="rodape envelope">
+    <p>“Marcar como visto” é só uma lembrança pessoal salva neste navegador — não afeta o que outras pessoas do DEPAF veem.</p>
+    <p>Fonte: <a href="https://dool.egba.ba.gov.br/" target="_blank" rel="noopener">Diário Oficial do Estado da Bahia</a></p>
+  </footer>
 
 <script>
   const CHAVE_VISTOS = 'monitor-doe-depaf-vistos';
@@ -196,6 +612,13 @@
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // "Cessão / Remoção" -> "cessao-remocao": vira o data-t que escolhe a cor do selo.
+  function slug(texto) {
+    return String(texto)
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   }
 
   function destacarTermo(snippet, termos) {
@@ -249,7 +672,9 @@
     TIPOS.forEach((tipo) => {
       const n = contagens[tipo] || 0;
       const btn = document.createElement('button');
-      btn.className = 'chip-tipo' + (tiposSelecionados.has(tipo) ? ' selecionado' : '') + (n === 0 ? ' zero' : '');
+      btn.type = 'button';
+      btn.className = 'chip-tipo' + (n === 0 ? ' zero' : '');
+      btn.setAttribute('aria-pressed', tiposSelecionados.has(tipo) ? 'true' : 'false');
       btn.innerHTML = `${escapeHtml(tipo)} <span class="contagem">${n}</span>`;
       btn.addEventListener('click', (e) => {
         const eraSoEsse = tiposSelecionados.size === 1 && tiposSelecionados.has(tipo);
@@ -273,30 +698,53 @@
 
   function renderCard(m, vistos) {
     const jaVisto = vistos.has(m.id);
-    const div = document.createElement('div');
-    div.className = 'card ' + (m.isDepafMention ? 'depaf' : 'pcba') + (jaVisto ? ' visto' : '');
-    div.innerHTML = `
-      <div class="card-top">
-        <div class="badges">
-          <span class="badge">${escapeHtml(m.movementType)}</span>
-          ${m.editionNumero ? `<span class="badge">edição nº ${escapeHtml(String(m.editionNumero))}</span>` : ''}
-          ${m.isDepafMention ? '<span class="badge-depaf">menciona DEPAF</span>' : ''}
+    const art = document.createElement('article');
+    art.className = 'card' + (m.isDepafMention ? ' card--depaf' : '') + (jaVisto ? ' card--visto' : '');
+    art.innerHTML = `
+      <div class="card__topo">
+        <div class="selos">
+          <span class="selo" data-t="${slug(m.movementType)}">${escapeHtml(m.movementType)}</span>
+          ${m.editionNumero ? `<span class="selo selo--neutro">ed. nº ${escapeHtml(String(m.editionNumero))}</span>` : ''}
+          ${m.isDepafMention ? '<span class="selo selo--depaf">DEPAF</span>' : ''}
         </div>
-        <span class="data">${formatarData(m.editionDate)}${m.page ? ' · pág. ' + m.page : ''}</span>
+        <span class="data"><time datetime="${escapeHtml(m.editionDate)}">${formatarData(m.editionDate)}</time>${m.page ? ' · pág. ' + escapeHtml(String(m.page)) : ''}</span>
       </div>
       <div class="snippet">${destacarTermo(m.snippet, [m.matchedTerm])}</div>
-      <div class="card-actions">
-        <a href="${m.sourceUrl}" target="_blank" rel="noopener">Ver no Diário ↗</a>
-        <button data-marcar="${m.id}">${jaVisto ? 'marcado como visto ✓' : 'marcar como visto'}</button>
+      <div class="card__acoes">
+        <a class="botao" href="${escapeHtml(m.sourceUrl)}" target="_blank" rel="noopener">Ver no Diário ↗</a>
+        <button type="button" class="botao${jaVisto ? ' botao--marcado' : ''}" data-marcar aria-pressed="${jaVisto}">${jaVisto ? 'visto ✓' : 'marcar como visto'}</button>
       </div>
     `;
-    div.querySelector('[data-marcar]').addEventListener('click', () => {
+
+    art.querySelector('[data-marcar]').addEventListener('click', () => {
       const v = lerVistos();
       if (v.has(m.id)) v.delete(m.id); else v.add(m.id);
       salvarVistos(v);
       renderizar();
     });
-    return div;
+
+    return art;
+  }
+
+  // O texto do Diário vem longo demais pra caber num cartão: o CSS corta em 6
+  // linhas e aqui a gente só oferece "ver texto completo" onde sobrou mesmo
+  // coisa escondida. Precisa rodar depois dos cartões estarem no documento —
+  // scrollHeight de elemento solto é sempre 0.
+  function ajustarSnippets(container) {
+    container.querySelectorAll('.snippet').forEach((snippetEl) => {
+      if (snippetEl.scrollHeight - snippetEl.clientHeight < 8) return;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'botao botao--fantasma';
+      btn.textContent = 'ver texto completo';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', () => {
+        const aberto = snippetEl.classList.toggle('snippet--aberto');
+        btn.setAttribute('aria-expanded', String(aberto));
+        btn.textContent = aberto ? 'recolher texto' : 'ver texto completo';
+      });
+      snippetEl.parentElement.querySelector('.card__acoes').appendChild(btn);
+    });
   }
 
   function renderizar() {
@@ -312,13 +760,17 @@
 
     listaEl.innerHTML = '';
     if (filtrados.length === 0) {
-      listaEl.innerHTML = '<div class="empty">Nenhuma publicação encontrada com esses filtros.</div>';
+      listaEl.innerHTML = '<p class="vazio">Nenhuma publicação encontrada com esses filtros.</p>';
     } else {
-      visiveis.forEach((m) => listaEl.appendChild(renderCard(m, vistos)));
+      const fragmento = document.createDocumentFragment();
+      visiveis.forEach((m) => fragmento.appendChild(renderCard(m, vistos)));
+      listaEl.appendChild(fragmento);
+      ajustarSnippets(listaEl);
     }
 
-    statusEl.textContent = `${filtrados.length} de ${dados.length} publicação(ões)${filtrados.length !== visiveis.length ? ' · mostrando ' + visiveis.length : ''}`;
-    btnMais.style.display = itensVisiveis < filtrados.length ? 'block' : 'none';
+    statusEl.textContent = `${filtrados.length} de ${dados.length} publicação(ões)` +
+      (filtrados.length !== visiveis.length ? ` · mostrando ${visiveis.length}` : '');
+    btnMais.hidden = itensVisiveis >= filtrados.length;
   }
 
   function atualizarResumo() {
@@ -338,33 +790,42 @@
       atualizarResumo();
       renderizar();
     } catch (err) {
-      listaEl.innerHTML = `<div class="erro">Não consegui carregar os dados (${err.message}). Se o robô ainda não rodou nenhuma vez, data/matches.json pode não existir ainda.</div>`;
+      listaEl.innerHTML = `<p class="erro">Não consegui carregar os dados (${escapeHtml(err.message)}). Se o robô ainda não rodou nenhuma vez, data/matches.json pode não existir ainda.</p>`;
       statusEl.textContent = 'erro';
     }
   }
 
   document.querySelectorAll('[data-escopo]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('[data-escopo]').forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
+      document.querySelectorAll('[data-escopo]').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
       escopo = btn.dataset.escopo;
       itensVisiveis = TAMANHO_PAGINA;
       renderizar();
     });
   });
 
-  document.getElementById('data-de').addEventListener('change', (e) => {
-    dataDe = e.target.value || null;
-    itensVisiveis = TAMANHO_PAGINA;
-    renderizar();
-  });
-  document.getElementById('data-ate').addEventListener('change', (e) => {
-    dataAte = e.target.value || null;
-    itensVisiveis = TAMANHO_PAGINA;
-    renderizar();
+  // Os presets e os campos de data mexem no mesmo estado; essa função mantém
+  // os dois lados sincronizados, inclusive o aria-pressed dos chips.
+  function sincronizarPeriodo(presetAtivo) {
+    document.getElementById('data-de').value = dataDe || '';
+    document.getElementById('data-ate').value = dataAte || '';
+    document.querySelectorAll('[data-preset]').forEach((b) => {
+      b.setAttribute('aria-pressed', b.dataset.preset === presetAtivo ? 'true' : 'false');
+    });
+  }
+
+  ['data-de', 'data-ate'].forEach((id) => {
+    document.getElementById(id).addEventListener('change', (e) => {
+      if (id === 'data-de') dataDe = e.target.value || null;
+      else dataAte = e.target.value || null;
+      sincronizarPeriodo(null);
+      itensVisiveis = TAMANHO_PAGINA;
+      renderizar();
+    });
   });
 
-  document.querySelectorAll('.chip-preset').forEach((btn) => {
+  document.querySelectorAll('[data-preset]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const hoje = new Date();
       const preset = btn.dataset.preset;
@@ -378,8 +839,7 @@
         const inicio = new Date(hoje); inicio.setDate(inicio.getDate() - dias);
         dataDe = isoDe(inicio); dataAte = isoDe(hoje);
       }
-      document.getElementById('data-de').value = dataDe || '';
-      document.getElementById('data-ate').value = dataAte || '';
+      sincronizarPeriodo(preset);
       itensVisiveis = TAMANHO_PAGINA;
       renderizar();
     });
