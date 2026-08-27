@@ -405,13 +405,17 @@
     color: var(--tinta-3); white-space: nowrap; font-variant-numeric: tabular-nums;
   }
 
-  /* --- texto da publicação: respeita as quebras de linha do Diário ------- */
+  /* --- texto da publicação -----------------------------------------------
+     As quebras de linha que vêm do Diário são artefato da extração do PDF:
+     cortam no meio da frase. Por isso o texto flui como parágrafo (elas viram
+     espaço) e não em pre-wrap. Justificado com hifenização — o <html lang="pt-BR">
+     é o que faz o navegador hifenizar em português e fechar os vãos. */
   .snippet {
     position: relative;
     font-size: var(--t-md); line-height: var(--lh-leitura);
     color: var(--tinta); margin: 0 0 var(--e-3);
-    white-space: pre-wrap; overflow-wrap: anywhere;
-    max-height: calc(var(--lh-leitura) * 6em); overflow: hidden;
+    text-align: justify; hyphens: auto; overflow-wrap: break-word;
+    max-height: 10.5em; overflow: hidden;
   }
   .snippet--aberto { max-height: none; }
   .snippet:not(.snippet--aberto)::after {
@@ -489,6 +493,8 @@
     .filtros__rotulo { flex-basis: auto; }
     .filtros__dica { padding-left: 0; }
     .card__topo { align-items: flex-start; }
+    /* coluna estreita demais pra justificar sem abrir vãos entre as palavras */
+    .snippet { text-align: left; }
   }
 </style>
 </head>
