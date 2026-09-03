@@ -380,11 +380,17 @@
   .selo[data-t="licencas-e-afastamentos"]  { --matiz: 38;  --sat: 55%; }
   .selo[data-t="contratos-e-compras"]      { --matiz: 82;  --sat: 34%; }
   .selo[data-t="normas-e-colegiados"]      { --matiz: 272; --sat: 35%; }
-  .selo[data-t="correicao-e-disciplina"]   { --matiz: 12;  --sat: 55%; }
+  .selo[data-t="corregedoria-e-disciplina"] { --matiz: 12;  --sat: 55%; }
   .selo[data-t="outros"]                   { --matiz: 200; --sat: 8%;  }
 
   .selo--neutro {
     font-family: var(--f-mono); font-weight: 400;
+    background: var(--superficie-2); color: var(--tinta-3);
+  }
+  /* espécie do documento (Portaria, Decreto, Extrato...). Fica em cinza porque
+     é o continente, não o conteúdo: quase tudo no Diário é portaria. */
+  .selo--doc {
+    font-weight: 500;
     background: var(--superficie-2); color: var(--tinta-3);
   }
   .selo--depaf {
@@ -569,14 +575,14 @@
         <button type="button" class="link-mini" data-limpar="assunto">ver todos</button>
       </div>
 
-      <div class="filtros__linha" role="group" aria-labelledby="rot-motivo" id="linha-motivo">
+      <div class="filtros__linha" role="group" aria-labelledby="rot-motivo" id="linha-motivo" hidden>
         <span class="filtros__rotulo" id="rot-motivo">Detalhe</span>
         <div class="tipos" id="motivos-grid"></div>
         <button type="button" class="link-mini" data-limpar="motivo">ver todos</button>
       </div>
       <p class="filtros__dica">
-        Clique para ver só aquilo · Ctrl+clique para combinar mais de um · “ver todos” volta a mostrar tudo.
-        O <strong>Detalhe</strong> só lista o que existe dentro do assunto escolhido.
+        Clique num assunto para ver só ele · Ctrl+clique para combinar mais de um · “ver todos” volta a mostrar tudo.
+        A linha <strong>Detalhe</strong> aparece depois que você escolhe um assunto, e só lista o que existe dentro dele.
       </p>
 
       <div class="filtros__linha" role="group" aria-labelledby="rot-busca">
@@ -618,7 +624,7 @@
     'Licenças e afastamentos',
     'Contratos e compras',
     'Normas e colegiados',
-    'Correição e disciplina',
+    'Corregedoria e disciplina',
     'Outros',
   ];
   const TAMANHO_PAGINA = 40;
@@ -781,7 +787,11 @@
       contagens.set(mo, (contagens.get(mo) || 0) + 1);
     });
     const valores = [...contagens.keys()].sort((a, b) => contagens.get(b) - contagens.get(a));
-    document.getElementById('linha-motivo').hidden = valores.length < 2;
+    // A linha só existe depois de escolher um assunto. Sem isso ela abria com
+    // os 26 motivos de uma vez — uma parede de chips que se lia como se fosse
+    // parte do assunto. Com menos de dois motivos também some: escolher entre
+    // uma opção não é escolha.
+    document.getElementById('linha-motivo').hidden = !assuntosSelecionados || valores.length < 2;
     renderChips(
       document.getElementById('motivos-grid'),
       valores,
@@ -799,6 +809,7 @@
       <div class="card__topo">
         <div class="selos">
           <span class="selo" data-t="${slug(assuntoDe(m))}" title="${escapeHtml(assuntoDe(m))}">${escapeHtml(motivoDe(m))}</span>
+          ${m.movementType ? `<span class="selo selo--doc">${escapeHtml(m.movementType)}</span>` : ''}
           ${m.editionNumero ? `<span class="selo selo--neutro">ed. nº ${escapeHtml(String(m.editionNumero))}</span>` : ''}
           ${m.isDepafMention ? '<span class="selo selo--depaf">DEPAF</span>' : ''}
         </div>
