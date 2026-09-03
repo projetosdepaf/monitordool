@@ -373,20 +373,15 @@
       color: hsl(var(--matiz) calc(var(--sat) + 10%) 76%);
     }
   }
-  .selo[data-t="nomeacao"]           { --matiz: 150; --sat: 38%; }
-  .selo[data-t="exoneracao"]         { --matiz: 12;  --sat: 55%; }
-  .selo[data-t="designacao"]         { --matiz: 212; --sat: 45%; }
-  .selo[data-t="aposentadoria"]      { --matiz: 272; --sat: 35%; }
-  .selo[data-t="licenca"]            { --matiz: 38;  --sat: 55%; }
-  .selo[data-t="cessao-remocao"]     { --matiz: 186; --sat: 40%; }
-  .selo[data-t="convocacao"]         { --matiz: 246; --sat: 35%; }
-  .selo[data-t="diarias-viagem"]     { --matiz: 196; --sat: 45%; }
-  .selo[data-t="retificacao"]        { --matiz: 30;  --sat: 22%; }
-  .selo[data-t="edital"]             { --matiz: 330; --sat: 38%; }
-  .selo[data-t="contrato-licitacao"] { --matiz: 82;  --sat: 34%; }
-  .selo[data-t="portaria"]           { --matiz: 216; --sat: 20%; }
-  .selo[data-t="ato-decreto"]        { --matiz: 190; --sat: 30%; }
-  .selo[data-t="outro"]              { --matiz: 200; --sat: 8%;  }
+  /* Uma cor por ASSUNTO (7), não por motivo: o selo diz o motivo, e a cor
+     agrupa visualmente os motivos do mesmo assunto sem precisar de legenda. */
+  .selo[data-t="pessoal"]                  { --matiz: 212; --sat: 45%; }
+  .selo[data-t="direitos-e-vantagens"]     { --matiz: 150; --sat: 38%; }
+  .selo[data-t="licencas-e-afastamentos"]  { --matiz: 38;  --sat: 55%; }
+  .selo[data-t="contratos-e-compras"]      { --matiz: 82;  --sat: 34%; }
+  .selo[data-t="normas-e-colegiados"]      { --matiz: 272; --sat: 35%; }
+  .selo[data-t="correicao-e-disciplina"]   { --matiz: 12;  --sat: 55%; }
+  .selo[data-t="outros"]                   { --matiz: 200; --sat: 8%;  }
 
   .selo--neutro {
     font-family: var(--f-mono); font-weight: 400;
@@ -568,13 +563,20 @@
         </div>
       </div>
 
-      <div class="filtros__linha" role="group" aria-labelledby="rot-tipo">
-        <span class="filtros__rotulo" id="rot-tipo">Tipo</span>
-        <div class="tipos" id="tipos-grid"></div>
-        <button type="button" class="link-mini" data-tipos-acao="todos">ver todos</button>
+      <div class="filtros__linha" role="group" aria-labelledby="rot-assunto">
+        <span class="filtros__rotulo" id="rot-assunto">Assunto</span>
+        <div class="tipos" id="assuntos-grid"></div>
+        <button type="button" class="link-mini" data-limpar="assunto">ver todos</button>
+      </div>
+
+      <div class="filtros__linha" role="group" aria-labelledby="rot-motivo" id="linha-motivo">
+        <span class="filtros__rotulo" id="rot-motivo">Detalhe</span>
+        <div class="tipos" id="motivos-grid"></div>
+        <button type="button" class="link-mini" data-limpar="motivo">ver todos</button>
       </div>
       <p class="filtros__dica">
-        Clique num tipo para ver só ele · Ctrl+clique para combinar mais de um · “ver todos” volta a mostrar tudo.
+        Clique para ver só aquilo · Ctrl+clique para combinar mais de um · “ver todos” volta a mostrar tudo.
+        O <strong>Detalhe</strong> só lista o que existe dentro do assunto escolhido.
       </p>
 
       <div class="filtros__linha" role="group" aria-labelledby="rot-busca">
@@ -608,13 +610,27 @@
 
 <script>
   const CHAVE_VISTOS = 'monitor-doe-depaf-vistos';
-  const TIPOS = ['Nomeação','Exoneração','Designação','Aposentadoria','Licença','Cessão / Remoção','Convocação','Diárias / Viagem','Retificação','Edital','Contrato / Licitação','Portaria','Ato / Decreto','Outro'];
+  // Ordem em que os assuntos aparecem no painel. Tem que bater com ASSUNTOS
+  // de lib/assunto.js, que é quem carimba o campo em cada publicação.
+  const ASSUNTOS = [
+    'Pessoal',
+    'Direitos e vantagens',
+    'Licenças e afastamentos',
+    'Contratos e compras',
+    'Normas e colegiados',
+    'Correição e disciplina',
+    'Outros',
+  ];
   const TAMANHO_PAGINA = 40;
 
   let escopo = 'todos-pcba';
   let dataDe = null;
   let dataAte = null;
-  let tiposSelecionados = new Set(TIPOS);
+  // null = sem restrição ("ver todos"). Um Set = só esses valores.
+  // Guardar null em vez do conjunto cheio faz o nível 2 se comportar sozinho:
+  // quando o assunto muda, o detalhe volta a null e nada some sem explicação.
+  let assuntosSelecionados = null;
+  let motivosSelecionados = null;
   let buscaTexto = '';
   let ocultarVistos = false;
   let dados = [];
@@ -661,7 +677,10 @@
   function isoDe(date) { return date.toISOString().slice(0, 10); }
 
   // --- filtros que não dependem do tipo (usado pra calcular as contagens por tipo) ---
-  function filtrarSemTipo() {
+  // Cada nível de filtro precisa contar em cima do que sobrou dos ANTERIORES,
+  // senão os números nos chips mentem. Daí as três funções em camadas:
+  // base (escopo/data/busca) -> + assunto -> + motivo/vistos.
+  function filtrarBase() {
     return dados.filter((m) => {
       if (escopo === 'so-depaf' && !m.isDepafMention) return false;
       if (dataDe && m.editionDate < dataDe) return false;
@@ -674,48 +693,102 @@
     });
   }
 
+  function filtrarPorAssunto() {
+    if (!assuntosSelecionados) return filtrarBase();
+    return filtrarBase().filter((m) => assuntosSelecionados.has(assuntoDe(m)));
+  }
+
   function filtrarCompleto() {
     const vistos = lerVistos();
-    return filtrarSemTipo().filter((m) => {
-      if (!tiposSelecionados.has(m.movementType)) return false;
+    return filtrarPorAssunto().filter((m) => {
+      if (motivosSelecionados && !motivosSelecionados.has(motivoDe(m))) return false;
       if (ocultarVistos && vistos.has(m.id)) return false;
       return true;
     });
   }
 
-  function renderTipos() {
-    const base = filtrarSemTipo();
-    const contagens = {};
-    TIPOS.forEach((t) => (contagens[t] = 0));
-    base.forEach((m) => { if (contagens[m.movementType] !== undefined) contagens[m.movementType]++; });
+  // Publicações gravadas antes da classificação em dois níveis não têm os
+  // campos novos; nesses casos o tipo antigo ainda diz alguma coisa.
+  function assuntoDe(m) { return m.assunto || 'Outros'; }
+  function motivoDe(m) { return m.motivo || m.movementType || 'Não classificado'; }
 
-    const grid = document.getElementById('tipos-grid');
+  /**
+   * Desenha uma fileira de chips. É a mesma interação dos dois níveis, então
+   * vale a pena ter uma função só: clique isola, Ctrl+clique soma, clicar de
+   * novo no único isolado volta pra "todos" (selecao = null).
+   */
+  function renderChips(grid, valores, contagens, selecao, aoMudar) {
     grid.innerHTML = '';
-    TIPOS.forEach((tipo) => {
-      const n = contagens[tipo] || 0;
+    valores.forEach((valor) => {
+      const n = contagens.get(valor) || 0;
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'chip-tipo' + (n === 0 ? ' zero' : '');
-      btn.setAttribute('aria-pressed', tiposSelecionados.has(tipo) ? 'true' : 'false');
-      btn.innerHTML = `${escapeHtml(tipo)} <span class="contagem">${n}</span>`;
+      btn.setAttribute('aria-pressed', selecao && selecao.has(valor) ? 'true' : 'false');
+      btn.innerHTML = `${escapeHtml(valor)} <span class="contagem">${n}</span>`;
       btn.addEventListener('click', (e) => {
-        const eraSoEsse = tiposSelecionados.size === 1 && tiposSelecionados.has(tipo);
+        const eraSoEsse = selecao && selecao.size === 1 && selecao.has(valor);
+        let novo;
         if (e.ctrlKey || e.metaKey || e.shiftKey) {
-          // Ctrl/Cmd/Shift + clique: soma ou tira esse tipo da seleção atual, sem mexer no resto.
-          if (tiposSelecionados.has(tipo)) tiposSelecionados.delete(tipo);
-          else tiposSelecionados.add(tipo);
+          // soma ou tira esse valor da seleção atual, sem mexer no resto
+          novo = new Set(selecao || valores);
+          if (novo.has(valor)) novo.delete(valor); else novo.add(valor);
+          if (novo.size === 0 || novo.size === valores.length) novo = null;
         } else if (eraSoEsse) {
-          // clicar de novo no único tipo já isolado volta a mostrar todos
-          tiposSelecionados = new Set(TIPOS);
+          novo = null; // clicar de novo no isolado volta a mostrar tudo
         } else {
-          // clique normal: isola só esse tipo (desmarca todos os outros)
-          tiposSelecionados = new Set([tipo]);
+          novo = new Set([valor]); // clique normal isola
         }
+        aoMudar(novo);
         itensVisiveis = TAMANHO_PAGINA;
         renderizar();
       });
       grid.appendChild(btn);
     });
+  }
+
+  function renderAssuntos() {
+    const base = filtrarBase();
+    const contagens = new Map();
+    base.forEach((m) => {
+      const a = assuntoDe(m);
+      contagens.set(a, (contagens.get(a) || 0) + 1);
+    });
+    renderChips(
+      document.getElementById('assuntos-grid'),
+      ASSUNTOS,
+      contagens,
+      assuntosSelecionados,
+      (novo) => {
+        assuntosSelecionados = novo;
+        // trocar de assunto zera o detalhe: um motivo que não existe no novo
+        // assunto deixaria a lista vazia sem a pessoa entender por quê
+        motivosSelecionados = null;
+      }
+    );
+  }
+
+  /**
+   * O nível 2 só lista os motivos que existem dentro do que já está filtrado.
+   * Se sobrar um motivo só, a linha inteira some — escolher entre uma opção
+   * não é escolha.
+   */
+  function renderMotivos() {
+    const base = filtrarPorAssunto();
+    const contagens = new Map();
+    base.forEach((m) => {
+      const mo = motivoDe(m);
+      contagens.set(mo, (contagens.get(mo) || 0) + 1);
+    });
+    const valores = [...contagens.keys()].sort((a, b) => contagens.get(b) - contagens.get(a));
+    document.getElementById('linha-motivo').hidden = valores.length < 2;
+    renderChips(
+      document.getElementById('motivos-grid'),
+      valores,
+      contagens,
+      motivosSelecionados,
+      (novo) => { motivosSelecionados = novo; }
+    );
   }
 
   function renderCard(m, vistos) {
@@ -725,7 +798,7 @@
     art.innerHTML = `
       <div class="card__topo">
         <div class="selos">
-          <span class="selo" data-t="${slug(m.movementType)}">${escapeHtml(m.movementType)}</span>
+          <span class="selo" data-t="${slug(assuntoDe(m))}" title="${escapeHtml(assuntoDe(m))}">${escapeHtml(motivoDe(m))}</span>
           ${m.editionNumero ? `<span class="selo selo--neutro">ed. nº ${escapeHtml(String(m.editionNumero))}</span>` : ''}
           ${m.isDepafMention ? '<span class="selo selo--depaf">DEPAF</span>' : ''}
         </div>
@@ -795,7 +868,8 @@
     const btnMais = document.getElementById('btn-carregar-mais');
     const vistos = lerVistos();
 
-    renderTipos();
+    renderAssuntos();
+    renderMotivos();
 
     const filtrados = filtrarCompleto();
     const visiveis = filtrados.slice(0, itensVisiveis);
@@ -887,9 +961,11 @@
     });
   });
 
-  document.querySelectorAll('[data-tipos-acao]').forEach((btn) => {
+  document.querySelectorAll('[data-limpar]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      tiposSelecionados = btn.dataset.tiposAcao === 'todos' ? new Set(TIPOS) : new Set();
+      // limpar o assunto também limpa o detalhe, que é filho dele
+      if (btn.dataset.limpar === 'assunto') assuntosSelecionados = null;
+      motivosSelecionados = null;
       itensVisiveis = TAMANHO_PAGINA;
       renderizar();
     });
