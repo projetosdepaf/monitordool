@@ -643,7 +643,11 @@
     let escapado = escapeHtml(snippet);
     const lista = [...new Set(termos.filter(Boolean))];
     lista.forEach((termo) => {
-      const re = new RegExp('(' + termo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      // O termo casado chega com espaço simples, mas no texto da publicação ele
+      // pode estar partido por quebra de linha ("DEP\nPLANEJAMENTO ADM E
+      // FINANÇAS"). Cada espaço vira "um ou mais brancos" pra achar assim mesmo.
+      const padrao = termo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+');
+      const re = new RegExp('(' + padrao + ')', 'ig');
       escapado = escapado.replace(re, '<mark>$1</mark>');
     });
     return escapado;
