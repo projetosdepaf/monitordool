@@ -115,6 +115,8 @@ async function main() {
           editionDate: edicaoInfo.data,
           matchedTerm: m.matchedTerm,
           movementType: m.movementType,
+          assunto: m.assunto,
+          motivo: m.motivo,
           isDepafMention: m.isDepafMention,
           materiaId: m.materiaId,
           page: m.page,

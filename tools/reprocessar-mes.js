@@ -84,9 +84,12 @@ async function main() {
     }
     diasComEdicao++;
 
-    const antes = existingMatches.length;
+    // Guarda o que vai ser apagado: se a edição falhar no meio do caminho,
+    // as publicações antigas voltam. Sem isso, uma queda de conexão apagava
+    // silenciosamente a edição inteira na próxima gravação.
+    const antigasDaEdicao = existingMatches.filter((m) => m.editionId === edicaoInfo.id);
     existingMatches = existingMatches.filter((m) => m.editionId !== edicaoInfo.id);
-    const removidos = antes - existingMatches.length;
+    const removidos = antigasDaEdicao.length;
     totalRemovidos += removidos;
     processedEditions = processedEditions.filter((id) => id !== edicaoInfo.id);
     if (removidos) log(`${dataIso}: removidas ${removidos} publicação(ões) antiga(s) da edição ${edicaoInfo.id}.`);
@@ -95,7 +98,9 @@ async function main() {
     try {
       resultados = await processarEdicao(edicaoInfo, { log });
     } catch (err) {
-      log(`${dataIso}: erro processando a edição ${edicaoInfo.id} (${err.message}), pulando (não marcada como processada, tenta de novo depois).`);
+      log(`${dataIso}: erro processando a edição ${edicaoInfo.id} (${err.message}), devolvendo as ${removidos} publicação(ões) antiga(s) e seguindo.`);
+      existingMatches = existingMatches.concat(antigasDaEdicao);
+      totalRemovidos -= removidos;
       continue;
     }
 
@@ -109,6 +114,8 @@ async function main() {
         editionDate: edicaoInfo.data,
         matchedTerm: m.matchedTerm,
         movementType: m.movementType,
+        assunto: m.assunto,
+        motivo: m.motivo,
         isDepafMention: m.isDepafMention,
         materiaId: m.materiaId,
         page: m.page,
