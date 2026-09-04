@@ -324,6 +324,10 @@
     font-family: var(--f-mono); font-size: var(--t-xs); color: var(--tinta-2);
     font-variant-numeric: tabular-nums;
   }
+  .status--frescor { display: flex; align-items: center; gap: var(--e-3); color: var(--tinta-3); }
+  /* dado velho o bastante pra merecer aviso: some do cinza e vira alerta */
+  .status--frescor.vencido { color: var(--erro); }
+  .status--frescor .link-mini { font-family: var(--f-corpo); font-size: var(--t-xs); }
 
   /* ==========================================================================
      6. CARTÃO DE PUBLICAÇÃO
@@ -598,6 +602,10 @@
 
     <div class="status-bar">
       <p class="status" id="status" role="status" aria-live="polite">carregando…</p>
+      <p class="status status--frescor">
+        <span id="frescor">–</span>
+        <button type="button" class="link-mini" id="btn-atualizar">atualizar agora</button>
+      </p>
     </div>
 
     <h2 class="visualmente-oculto">Publicações encontradas</h2>
@@ -907,20 +915,82 @@
     document.getElementById('stat-atualizado').textContent = maisRecente ? formatarData(maisRecente) : '–';
   }
 
-  async function carregar() {
+  // --- frescor dos dados ---------------------------------------------------
+  // O robô roda uma vez por dia, mas a aba fica aberta a semana inteira. Sem
+  // isso a página mostrava para sempre o que existia na hora em que foi
+  // aberta, e só um F5 revelava que havia edição nova.
+  const INTERVALO_CHECAGEM = 10 * 60 * 1000;   // de quanto em quanto tempo reconfere
+  const IDADE_PARA_AVISAR  = 60 * 60 * 1000;   // a partir daqui o relogio fica vermelho
+
+  let ultimaAtualizacao = null;
+  let assinaturaDados = null;
+  let checandoAgora = false;
+
+  /** Resumo barato do conteudo, pra saber se mudou sem comparar 1,7 MB. */
+  function assinar(lista) {
+    if (!lista.length) return '0';
+    const maisRecente = lista.reduce((max, m) => (m.editionDate > max ? m.editionDate : max), '');
+    return `${lista.length}|${maisRecente}|${lista[0].id}`;
+  }
+
+  function renderFrescor() {
+    const el = document.getElementById('frescor');
+    const caixa = el.parentElement;
+    if (!ultimaAtualizacao) { el.textContent = '–'; return; }
+    const hora = ultimaAtualizacao.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    const idade = Date.now() - ultimaAtualizacao.getTime();
+    el.textContent = `dados conferidos às ${hora}`;
+    caixa.classList.toggle('vencido', idade > IDADE_PARA_AVISAR);
+  }
+
+  /**
+   * Busca o arquivo de novo. Em modo silencioso (automático), um erro não
+   * apaga a tela: melhor mostrar dado velho avisando a idade dele do que
+   * trocar a lista inteira por uma mensagem de falha de rede passageira.
+   */
+  async function carregar({ silencioso = false } = {}) {
+    if (checandoAgora) return;
+    checandoAgora = true;
     const statusEl = document.getElementById('status');
     const listaEl = document.getElementById('lista');
     try {
       const res = await fetch('data/matches.json', { cache: 'no-store' });
       if (!res.ok) throw new Error('resposta ' + res.status);
-      dados = await res.json();
+      const novos = await res.json();
+      const assinatura = assinar(novos);
+      ultimaAtualizacao = new Date();
+
+      // Nada mudou: não redesenha. Redesenhar fecharia os textos que a pessoa
+      // abriu e jogaria a rolagem pro topo sem motivo nenhum.
+      if (assinatura === assinaturaDados) { renderFrescor(); return; }
+
+      assinaturaDados = assinatura;
+      dados = novos;
       atualizarResumo();
       renderizar();
+      renderFrescor();
     } catch (err) {
+      if (silencioso) { renderFrescor(); return; }
       listaEl.innerHTML = `<p class="erro">Não consegui carregar os dados (${escapeHtml(err.message)}). Se o robô ainda não rodou nenhuma vez, data/matches.json pode não existir ainda.</p>`;
       statusEl.textContent = 'erro';
+    } finally {
+      checandoAgora = false;
     }
   }
+
+  // Reconfere de tempos em tempos, e sempre que a aba volta a ficar visível
+  // — que é o caso real: a pessoa deixa o monitor aberto e volta nele no dia
+  // seguinte. Com a aba escondida o navegador segura o timer, então o
+  // visibilitychange é quem garante o dado novo na hora em que se olha.
+  setInterval(() => { if (!document.hidden) carregar({ silencioso: true }); }, INTERVALO_CHECAGEM);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) return;
+    const idade = ultimaAtualizacao ? Date.now() - ultimaAtualizacao.getTime() : Infinity;
+    if (idade > INTERVALO_CHECAGEM) carregar({ silencioso: true });
+    else renderFrescor();
+  });
+  setInterval(renderFrescor, 60 * 1000);
+  document.getElementById('btn-atualizar').addEventListener('click', () => carregar());
 
   document.querySelectorAll('[data-escopo]').forEach((btn) => {
     btn.addEventListener('click', () => {
