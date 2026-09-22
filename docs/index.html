@@ -735,8 +735,33 @@
   // informa erra em torno de 12% das vezes, e mandar alguém anexar a página
   // errada a um processo é pior do que não oferecer o botão.
   const DOE = 'https://dool.egba.ba.gov.br';
-  function urlPaginaPdf(m) {
-    return `${DOE}/apifront/portal/edicoes/pdf_diario/${m.editionId}/${m.page}`;
+  function urlPaginaPdf(m, pagina) {
+    return `${DOE}/apifront/portal/edicoes/pdf_diario/${m.editionId}/${pagina}`;
+  }
+
+  /**
+   * Uma publicação pode atravessar a virada da página. Quando isso acontece,
+   * um botão só entregaria metade do documento — então sai um botão por
+   * página, e o rótulo avisa que são duas partes do mesmo ato.
+   */
+  function botoesPdf(m) {
+    if (!m.paginaConferida || !(m.page > 0)) return '';
+    const fim = m.pageFim > m.page ? m.pageFim : m.page;
+    const paginas = [];
+    for (let p = m.page; p <= fim; p++) paginas.push(p);
+    const varias = paginas.length > 1;
+    return paginas
+      .map((p, i) => {
+        const rotulo = varias
+          ? `PDF pág. ${p} (${i + 1} de ${paginas.length})`
+          : `PDF da pág. ${p}`;
+        const titulo = varias
+          ? `Esta publicação ocupa as páginas ${m.page} a ${fim} da edição nº ${m.editionNumero || ''}. Baixe as duas.`
+          : `Página ${p} da edição nº ${m.editionNumero || ''}, em PDF`;
+        return `<a class="botao botao--pdf" href="${escapeHtml(urlPaginaPdf(m, p))}" target="_blank" rel="noopener" title="${escapeHtml(titulo)}">${escapeHtml(rotulo)} ⤓</a>`;
+      })
+      .join('
+        ');
   }
 
   function assuntoDe(m) { return m.assunto || 'Outros'; }
@@ -842,7 +867,7 @@
       <div class="snippet">${destacarTermo(m.snippet, [m.matchedTerm])}</div>
       <div class="card__acoes">
         <a class="botao" href="${escapeHtml(m.sourceUrl)}" target="_blank" rel="noopener">Ver no Diário ↗</a>
-        ${m.paginaConferida && m.page > 0 ? `<a class="botao botao--pdf" href="${escapeHtml(urlPaginaPdf(m))}" target="_blank" rel="noopener" title="Página ${m.page} da edição nº ${escapeHtml(String(m.editionNumero || ''))}, em PDF">PDF da pág. ${m.page} ⤓</a>` : ''}
+        ${botoesPdf(m)}
         <button type="button" class="botao${jaVisto ? ' botao--marcado' : ''}" data-marcar aria-pressed="${jaVisto}">${jaVisto ? 'visto ✓' : 'marcar como visto'}</button>
       </div>
     `;

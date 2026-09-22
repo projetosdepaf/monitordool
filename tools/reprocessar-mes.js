@@ -119,6 +119,7 @@ async function main() {
         isDepafMention: m.isDepafMention,
         materiaId: m.materiaId,
         page: m.page,
+        pageFim: m.pageFim || m.page,
         paginaConferida: Boolean(m.paginaConferida),
         snippet: m.snippet,
         sourceUrl: m.sourceUrl,

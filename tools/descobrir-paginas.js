@@ -21,8 +21,13 @@
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
+const https = require('https');
 const { BASE_URL, getEdicaoParaData, sleep } = require('../lib/dool');
+const { extrairTextoConteudo } = require('../lib/portal');
 const { conferirEDescobrir, lerProporcao, salvarProporcao } = require('../lib/pagina');
+
+const AGENTE = new https.Agent({ rejectUnauthorized: false });
 
 const MATCHES_FILE = path.join(__dirname, '..', 'docs', 'data', 'matches.json');
 const SIMULAR = process.argv.includes('--simular');
@@ -34,6 +39,32 @@ function arg(nome) {
 
 function log(...args) {
   console.log(new Date().toISOString(), '-', ...args);
+}
+
+/**
+ * O matches.json guarda o texto cortado em 800 caracteres. Isso basta pra
+ * achar onde a publicação começa, mas não onde ela termina — e sem o fim não
+ * dá pra saber se ela atravessa a virada da página. Então, só para as
+ * cortadas, busca o texto original de novo no Diário.
+ *
+ * Atos vindos de decreto em lote ficam de fora: o endereço devolve o decreto
+ * inteiro, não o ato, e esse texto não serviria de âncora.
+ */
+async function buscarTextoCompleto(m) {
+  const cortado = /…\s*$/.test(String(m.snippet || ''));
+  if (!cortado) return null;
+  if (String(m.materiaId).includes('-')) return null;
+  try {
+    const res = await axios.get(m.sourceUrl, {
+      timeout: 45000,
+      httpsAgent: AGENTE,
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0 Safari/537.36' },
+    });
+    const texto = extrairTextoConteudo(res.data);
+    return texto && texto.length > 200 ? texto : null;
+  } catch {
+    return null;
+  }
 }
 
 async function main() {
@@ -85,6 +116,19 @@ async function main() {
 
     const faltam = info.itens.filter((m) => !m.paginaConferida).length;
     log(`${info.data} (edição ${edicaoId}, ${edicaoInfo.paginas} páginas): ${faltam} a conferir de ${info.itens.length}.`);
+
+    // recupera o texto inteiro das cortadas, pra poder achar o fim do documento
+    let recuperados = 0;
+    for (const m of info.itens) {
+      if (m.paginaConferida) continue;
+      const completo = await buscarTextoCompleto(m);
+      if (completo) {
+        m.textoCompleto = completo;
+        recuperados++;
+        await sleep(300);
+      }
+    }
+    if (recuperados) log(`  ${recuperados} texto(s) cortado(s) recuperado(s) por inteiro.`);
     const r = await conferirEDescobrir({
       baseUrl: BASE_URL,
       edicaoId,
@@ -94,12 +138,13 @@ async function main() {
       log,
     });
     if (r.proporcao) salvarProporcao(r.proporcao);
-    totalAchadas += r.achadas;
+    totalAchadas += r.confirmadas;
     totalPaginasLidas += r.paginasLidas;
 
     // grava a cada edição concluída: uma interrupção no meio não perde o
     // trabalho já feito
-    if (!SIMULAR && (r.achadas || r.confirmadas || r.desmentidas)) {
+    for (const m of info.itens) delete m.textoCompleto; // campo de trabalho
+    if (!SIMULAR) {
       fs.writeFileSync(MATCHES_FILE, JSON.stringify(dados, null, 2) + '\n');
     }
     await sleep(500);
