@@ -137,6 +137,9 @@ async function runOnce() {
       isDepafMention: m.isDepafMention,
       materiaId: m.materiaId,
       page: m.page,
+      // só com isso o painel oferece o PDF da página: a página do sumário
+      // às vezes está errada (ver lib/pagina.js)
+      paginaConferida: Boolean(m.paginaConferida),
       snippet: m.snippet,
       sourceUrl: m.sourceUrl,
     });

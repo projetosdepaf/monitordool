@@ -730,6 +730,10 @@
   // PDF só daquela página do Diário, direto no site da EGBA. É público, não
   // pede login — mas sai carimbado como "CÓPIA". A via certificada exige
   // conta no dool.egba.ba.gov.br e só entrega a edição inteira.
+  //
+  // O botão só aparece com `paginaConferida`: a página que o sumário do Diário
+  // informa erra em torno de 12% das vezes, e mandar alguém anexar a página
+  // errada a um processo é pior do que não oferecer o botão.
   const DOE = 'https://dool.egba.ba.gov.br';
   function urlPaginaPdf(m) {
     return `${DOE}/apifront/portal/edicoes/pdf_diario/${m.editionId}/${m.page}`;
@@ -838,7 +842,7 @@
       <div class="snippet">${destacarTermo(m.snippet, [m.matchedTerm])}</div>
       <div class="card__acoes">
         <a class="botao" href="${escapeHtml(m.sourceUrl)}" target="_blank" rel="noopener">Ver no Diário ↗</a>
-        ${m.page > 0 ? `<a class="botao botao--pdf" href="${escapeHtml(urlPaginaPdf(m))}" target="_blank" rel="noopener" title="Página ${m.page} da edição nº ${escapeHtml(String(m.editionNumero || ''))}, em PDF">PDF da pág. ${m.page} ⤓</a>` : ''}
+        ${m.paginaConferida && m.page > 0 ? `<a class="botao botao--pdf" href="${escapeHtml(urlPaginaPdf(m))}" target="_blank" rel="noopener" title="Página ${m.page} da edição nº ${escapeHtml(String(m.editionNumero || ''))}, em PDF">PDF da pág. ${m.page} ⤓</a>` : ''}
         <button type="button" class="botao${jaVisto ? ' botao--marcado' : ''}" data-marcar aria-pressed="${jaVisto}">${jaVisto ? 'visto ✓' : 'marcar como visto'}</button>
       </div>
     `;

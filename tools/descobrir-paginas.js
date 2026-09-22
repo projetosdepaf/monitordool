@@ -22,7 +22,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const { BASE_URL, getEdicaoParaData, sleep } = require('../lib/dool');
-const { descobrirPaginas, lerProporcao, salvarProporcao } = require('../lib/pagina');
+const { conferirEDescobrir, lerProporcao, salvarProporcao } = require('../lib/pagina');
 
 const MATCHES_FILE = path.join(__dirname, '..', 'docs', 'data', 'matches.json');
 const SIMULAR = process.argv.includes('--simular');
@@ -41,8 +41,10 @@ async function main() {
   const ate = arg('ate');
 
   const dados = JSON.parse(fs.readFileSync(MATCHES_FILE, 'utf8'));
+  // Pendente não é só quem está sem página: quem tem página vinda do sumário e
+  // ainda não foi conferida também entra, porque o sumário erra (ver lib/pagina.js).
   const semPagina = dados.filter(
-    (m) => !(m.page > 0) && (!de || m.editionDate >= de) && (!ate || m.editionDate <= ate)
+    (m) => !m.paginaConferida && (!de || m.editionDate >= de) && (!ate || m.editionDate <= ate)
   );
 
   if (!semPagina.length) {
@@ -81,9 +83,9 @@ async function main() {
       continue;
     }
 
-    const faltam = info.itens.filter((m) => !(m.page > 0)).length;
-    log(`${info.data} (edição ${edicaoId}, ${edicaoInfo.paginas} páginas): ${faltam} sem página de ${info.itens.length}.`);
-    const r = await descobrirPaginas({
+    const faltam = info.itens.filter((m) => !m.paginaConferida).length;
+    log(`${info.data} (edição ${edicaoId}, ${edicaoInfo.paginas} páginas): ${faltam} a conferir de ${info.itens.length}.`);
+    const r = await conferirEDescobrir({
       baseUrl: BASE_URL,
       edicaoId,
       totalPaginas: edicaoInfo.paginas,
@@ -97,16 +99,16 @@ async function main() {
 
     // grava a cada edição concluída: uma interrupção no meio não perde o
     // trabalho já feito
-    if (!SIMULAR && r.achadas) {
+    if (!SIMULAR && (r.achadas || r.confirmadas || r.desmentidas)) {
       fs.writeFileSync(MATCHES_FILE, JSON.stringify(dados, null, 2) + '\n');
     }
     await sleep(500);
   }
 
   log('----------------------------------------------------------------');
-  log(`Terminado. Localizadas ${totalAchadas} de ${semPagina.length}, lendo ${totalPaginasLidas} página(s) de PDF.`);
-  const aindaSem = dados.filter((m) => !(m.page > 0)).length;
-  log(`Ainda sem página no arquivo inteiro: ${aindaSem} de ${dados.length}.`);
+  log(`Terminado. Localizadas ${totalAchadas}, lendo ${totalPaginasLidas} página(s) de PDF.`);
+  const conferidas = dados.filter((m) => m.paginaConferida && m.page > 0).length;
+  log(`Páginas conferidas no arquivo inteiro: ${conferidas} de ${dados.length}.`);
   if (SIMULAR) log('(simulação — nada foi gravado)');
 }
 
