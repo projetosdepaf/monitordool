@@ -460,6 +460,10 @@
   .mais-texto::after { content: "▾"; }
   .mais-texto[aria-expanded="true"]::after { content: "▴"; }
   .botao--marcado { background: var(--superficie-2); color: var(--tinta-2); border-color: var(--linha); }
+  /* baixar a página é a ação de maior valor prático aqui — é o que vai pro
+     processo no SEI —, então ganha a borda da marca sem virar botão cheio */
+  .botao--pdf { border-color: var(--petroleo); color: var(--petroleo); font-weight: 600; }
+  .botao--pdf:hover { background: var(--petroleo); color: var(--superficie); }
 
   .carregar-mais {
     display: block; margin: var(--e-6) auto 0;
@@ -723,6 +727,14 @@
 
   // Publicações gravadas antes da classificação em dois níveis não têm os
   // campos novos; nesses casos o tipo antigo ainda diz alguma coisa.
+  // PDF só daquela página do Diário, direto no site da EGBA. É público, não
+  // pede login — mas sai carimbado como "CÓPIA". A via certificada exige
+  // conta no dool.egba.ba.gov.br e só entrega a edição inteira.
+  const DOE = 'https://dool.egba.ba.gov.br';
+  function urlPaginaPdf(m) {
+    return `${DOE}/apifront/portal/edicoes/pdf_diario/${m.editionId}/${m.page}`;
+  }
+
   function assuntoDe(m) { return m.assunto || 'Outros'; }
   function motivoDe(m) { return m.motivo || m.movementType || 'Não classificado'; }
 
@@ -826,6 +838,7 @@
       <div class="snippet">${destacarTermo(m.snippet, [m.matchedTerm])}</div>
       <div class="card__acoes">
         <a class="botao" href="${escapeHtml(m.sourceUrl)}" target="_blank" rel="noopener">Ver no Diário ↗</a>
+        ${m.page > 0 ? `<a class="botao botao--pdf" href="${escapeHtml(urlPaginaPdf(m))}" target="_blank" rel="noopener" title="Página ${m.page} da edição nº ${escapeHtml(String(m.editionNumero || ''))}, em PDF">PDF da pág. ${m.page} ⤓</a>` : ''}
         <button type="button" class="botao${jaVisto ? ' botao--marcado' : ''}" data-marcar aria-pressed="${jaVisto}">${jaVisto ? 'visto ✓' : 'marcar como visto'}</button>
       </div>
     `;
