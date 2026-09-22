@@ -760,8 +760,7 @@
           : `Página ${p} da edição nº ${m.editionNumero || ''}, em PDF`;
         return `<a class="botao botao--pdf" href="${escapeHtml(urlPaginaPdf(m, p))}" target="_blank" rel="noopener" title="${escapeHtml(titulo)}">${escapeHtml(rotulo)} ⤓</a>`;
       })
-      .join('
-        ');
+      .join('\n        ');
   }
 
   function assuntoDe(m) { return m.assunto || 'Outros'; }
