@@ -703,10 +703,7 @@
       if (escopo === 'so-depaf' && !m.isDepafMention) return false;
       if (dataDe && m.editionDate < dataDe) return false;
       if (dataAte && m.editionDate > dataAte) return false;
-      if (buscaTexto) {
-        const alvo = (m.snippet || '').toLowerCase();
-        if (!alvo.includes(buscaTexto.toLowerCase())) return false;
-      }
+      if (buscaTexto && !textoBusca(m).includes(semAcento(buscaTexto))) return false;
       return true;
     });
   }
@@ -761,6 +758,22 @@
         return `<a class="botao botao--pdf" href="${escapeHtml(urlPaginaPdf(m, p))}" target="_blank" rel="noopener" title="${escapeHtml(titulo)}">${escapeHtml(rotulo)} ⤓</a>`;
       })
       .join('\n        ');
+  }
+
+  /**
+   * Busca sem acento e sem caixa. Sem isso, procurar "lelia" não achava
+   * "Lélia" — e era justamente assim que o nome aparecia nas portarias de
+   * grupo de trabalho.
+   */
+  function semAcento(s) {
+    return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  }
+
+  // Normalizar 1.900 textos a cada tecla seria desperdício: guarda o
+  // resultado no próprio registro, calculado uma vez só.
+  function textoBusca(m) {
+    if (m._busca === undefined) m._busca = semAcento(m.snippet);
+    return m._busca;
   }
 
   function assuntoDe(m) { return m.assunto || 'Outros'; }

@@ -29,6 +29,9 @@ const { conferirEDescobrir, lerProporcao, salvarProporcao } = require('../lib/pa
 
 const AGENTE = new https.Agent({ rejectUnauthorized: false });
 
+// tem que bater com o limite do robô em lib/dool.js
+const LIMITE_TEXTO = Number(process.env.LIMITE_TEXTO || 4000);
+
 const MATCHES_FILE = path.join(__dirname, '..', 'docs', 'data', 'matches.json');
 const SIMULAR = process.argv.includes('--simular');
 
@@ -74,8 +77,13 @@ async function main() {
   const dados = JSON.parse(fs.readFileSync(MATCHES_FILE, 'utf8'));
   // Pendente não é só quem está sem página: quem tem página vinda do sumário e
   // ainda não foi conferida também entra, porque o sumário erra (ver lib/pagina.js).
+  // Duas razões pra uma publicação estar pendente:
+  //  - a página ainda não foi conferida contra o PDF;
+  //  - o texto guardado está cortado, o que atrapalha a busca do painel e
+  //    impede saber onde o documento termina.
+  const truncado = (m) => /…\s*$/.test(String(m.snippet || ''));
   const semPagina = dados.filter(
-    (m) => !m.paginaConferida && (!de || m.editionDate >= de) && (!ate || m.editionDate <= ate)
+    (m) => (!m.paginaConferida || truncado(m)) && (!de || m.editionDate >= de) && (!ate || m.editionDate <= ate)
   );
 
   if (!semPagina.length) {
@@ -120,10 +128,22 @@ async function main() {
     // recupera o texto inteiro das cortadas, pra poder achar o fim do documento
     let recuperados = 0;
     for (const m of info.itens) {
-      if (m.paginaConferida) continue;
+      // Também expande o texto de quem já teve a página conferida: o corte
+      // atrapalha a busca do painel do mesmo jeito.
+      if (m.paginaConferida && !truncado(m)) continue;
+      const jaConferida = m.paginaConferida;
       const completo = await buscarTextoCompleto(m);
       if (completo) {
         m.textoCompleto = completo;
+        // Já que o texto original foi baixado, aproveita pra guardar mais dele.
+        // O corte antigo em 800 caracteres deixava nomes de fora das listas de
+        // grupo de trabalho, e quem estivesse depois do corte não aparecia na
+        // busca do painel.
+        m.snippet = completo.length > LIMITE_TEXTO ? completo.slice(0, LIMITE_TEXTO) + '…' : completo;
+        // Com o texto inteiro em mãos a âncora de fim muda, e só agora dá pra
+        // saber se o ato atravessa a virada da página. Vale reconferir mesmo
+        // o que já tinha página.
+        if (jaConferida) m.paginaConferida = false;
         recuperados++;
         await sleep(300);
       }
