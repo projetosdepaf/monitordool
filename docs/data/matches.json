@@ -74,8 +74,8 @@
     "editionDate": "2026-09-22",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1336959",
     "page": 0,
@@ -91,8 +91,8 @@
     "editionDate": "2026-09-22",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1336952",
     "page": 0,
@@ -415,7 +415,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1336295",
     "page": 51,
@@ -449,7 +449,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1336299",
     "page": 51,
@@ -466,7 +466,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1336300",
     "page": 52,
@@ -601,8 +601,8 @@
     "editionDate": "2026-09-19",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Nomeação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1336074",
     "page": 52,
@@ -823,7 +823,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1335889",
     "page": 44,
@@ -924,8 +924,8 @@
     "editionDate": "2026-09-18",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1335882",
     "page": 43,
@@ -941,8 +941,8 @@
     "editionDate": "2026-09-18",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1335880",
     "page": 43,
@@ -2064,7 +2064,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1334593",
     "page": 47,
@@ -2081,7 +2081,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1334591",
     "page": 47,
@@ -2098,7 +2098,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1334589",
     "page": 47,
@@ -2471,8 +2471,8 @@
     "editionDate": "2026-09-15",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1333916",
     "page": 56,
@@ -2556,8 +2556,8 @@
     "editionDate": "2026-09-15",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1333924",
     "page": 56,
@@ -3305,7 +3305,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1331842",
     "page": 79,
@@ -3849,7 +3849,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1330214",
     "page": 59,
@@ -3883,7 +3883,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1330212",
     "page": 59,
@@ -4546,7 +4546,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1329405",
     "page": 53,
@@ -4563,7 +4563,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1329406",
     "page": 53,
@@ -4974,11 +4974,11 @@
     "motivo": "Averbação de tempo",
     "isDepafMention": false,
     "materiaId": "1328680",
-    "page": 63,
+    "page": 0,
     "snippet": "Portaria Nº 01117999 de 02 de Setembro de 2026\nO(A) Delegado Geral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL,\nno uso de suas atribuições e tendo em vista o disposto no(a) art. 201, §9º, da\nConstituição Federal de 1988, c/c art. 119, VI, da Lei nº 6.677, de 26 de\nsetembro de 1994, resolve averbar, nos registros funcionais do(s)\nservidor(es) do Quadro de Pessoal do(a) P.CIVIL, o tempo de serviço prestado\nsob Regime Geral da Previdência.\n Matrícula\n Nome\n Cargo\n Empregador\n Data Início\n Data Fim\n Total de Dias\n  20457567\n  JOAQUIM PEDREIRA DA SILVA\n  Investigador de polícia\n  UNILSAN COMERCIO E IMPORTACAO\n  18.11.1993\n  09.03.1994\n  112\nFinalidade:\nAVERBAÇÃO T.PRIVADO P/FINS DE\nAPOSENT.DISPONIBILIDADE 012.5913.2026.0053684-91\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA B…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328680",
-    "paginaConferida": true,
-    "pageFim": 63
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1328679",
@@ -5025,11 +5025,11 @@
     "motivo": "Averbação de tempo",
     "isDepafMention": false,
     "materiaId": "1328676",
-    "page": 63,
+    "page": 0,
     "snippet": "Portaria Nº 01117997 de 02 de Setembro de 2026\nO(A) Delegado Geral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL,\nno uso de suas atribuições e tendo em vista o disposto no(a) art. 201, §9º, da\nConstituição Federal de 1988, c/c art. 119, VI, da Lei nº 6.677, de 26 de\nsetembro de 1994, resolve averbar, nos registros funcionais do(s)\nservidor(es) do Quadro de Pessoal do(a) P.CIVIL, o tempo de serviço prestado\nsob Regime Geral da Previdência.\n Matrícula\n Nome\n Cargo\n Empregador\n Data Início\n Data Fim\n Total de Dias\n  20457567\n  JOAQUIM PEDREIRA DA SILVA\n  Investigador de polícia\n  FIRENZE DISTR.DE CALCADOS LTDA\n  01.07.1990\n  01.01.1991\n  185\nFinalidade:\nAVERBAÇÃO T.PRIVADO P/FINS DE\nAPOSENT.DISPONIBILIDADE 012.5913.2026.0053684-91\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA …",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328676",
-    "paginaConferida": true,
-    "pageFim": 63
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1328675",
@@ -5076,11 +5076,11 @@
     "motivo": "Averbação de tempo",
     "isDepafMention": false,
     "materiaId": "1328673",
-    "page": 63,
+    "page": 0,
     "snippet": "Portaria Nº 01117971 de 02 de Setembro de 2026\nO(A) Delegado Geral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL,\nno uso de suas atribuições e tendo em vista o disposto no(a) art. 201, §9º, da\nConstituição Federal de 1988, c/c art. 119, VI, da Lei nº 6.677, de 26 de\nsetembro de 1994, resolve averbar, nos registros funcionais do(s)\nservidor(es) do Quadro de Pessoal do(a) P.CIVIL, o tempo de serviço prestado\nsob Regime Geral da Previdência.\n Matrícula\n Nome\n Cargo\n Empregador\n Data Início\n Data Fim\n Total de Dias\n  20457567\n  JOAQUIM PEDREIRA DA SILVA\n  Investigador de polícia\n  FABRICA DE PAPEL DA BAHIA S A\n  26.02.1986\n  14.05.1986\n  78\nFinalidade:\nAVERBAÇÃO T.PRIVADO P/FINS DE\nAPOSENT.DISPONIBILIDADE 012.5913.2026.0053684-91\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BA…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328673",
-    "paginaConferida": true,
-    "pageFim": 63
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1328672",
@@ -5093,11 +5093,11 @@
     "motivo": "Averbação de tempo",
     "isDepafMention": false,
     "materiaId": "1328672",
-    "page": 63,
+    "page": 0,
     "snippet": "Portaria Nº 01117975 de 02 de Setembro de 2026\nO(A) Delegado Geral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL,\nno uso de suas atribuições e tendo em vista o disposto no(a) art. 201, §9º, da\nConstituição Federal de 1988, c/c art. 119, VI, da Lei nº 6.677, de 26 de\nsetembro de 1994, resolve averbar, nos registros funcionais do(s)\nservidor(es) do Quadro de Pessoal do(a) P.CIVIL, o tempo de serviço prestado\nsob Regime Geral da Previdência.\n Matrícula\n Nome\n Cargo\n Empregador\n Data Início\n Data Fim\n Total de Dias\n  20457567\n  JOAQUIM PEDREIRA DA SILVA\n  Investigador de polícia\n  ORGANIZAÇÃO GUARARAPES LTDA\n  09.07.1986\n  07.11.1986\n  122\nFinalidade:\nAVERBAÇÃO T.PRIVADO P/FINS DE\nAPOSENT.DISPONIBILIDADE 012.5913.2026.0053684-91\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAH…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328672",
-    "paginaConferida": true,
-    "pageFim": 63
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1328671",
@@ -5396,7 +5396,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1328652",
     "page": 61,
@@ -5650,8 +5650,8 @@
     "editionDate": "2026-09-03",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1328635",
     "page": 60,
@@ -5722,11 +5722,11 @@
     "motivo": "Remoção",
     "isDepafMention": false,
     "materiaId": "1328631",
-    "page": 60,
+    "page": 0,
     "snippet": "Portaria Nº 51695963 de 02 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições e tendo em vista o disposto no(a) arts. 72 e 74, inciso\nI, da Lei nº11.370 de 04.02.2009, resolve remover, o(s)\nservidor(es)abaixo:\n Matrícula\n Nome\n Cargo\n Unidade Origem\n Unidade Destino\n Data Início\n Número do Proc. SEI\n 92116332\n ALANA FERREIRA ALMEIDA\n Investigador de polícia\n DEP DE REP E COMB À C, CRIME ORG E L.DIN\n NUCLEO RECUPERAÇÃO ATIVOS DIRPIN LESTE\n Data da Publicação\n 012.20792.2026.0057398-84\n 92117963\n ANTONIO PANTALEAO SANTANA JUNIOR\n Investigador de polícia\n DEP DE REP E COMB À C, CRIME ORG E L.DIN\n NUCLEO RECUPERAÇÃO ATIVOS DIRPIN LESTE\n Data da Publicação\n 012.20792.2026.0057398-84\n 92127640\n LUCAS SILVA MASCARENHAS\n Investigado…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328631",
-    "paginaConferida": true,
-    "pageFim": 60
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1328630",
@@ -5756,11 +5756,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1328016",
-    "page": 60,
+    "page": 0,
     "snippet": "PORTARIA\nN° 283/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 206, inciso I, da Lei Estadual nº\n6.677/1994, tendo em vista o que consta no processo de Sindicância\nInvestigativa SEI nº 012.9950.2019.0005293-18 e o Parecer Nº\nPA-UDV-IP-SIND-040-2026 da Procuradoria Geral do Estado, RESOLVE:\nArquivar, por ausência de justa causa, os autos da Sindicância Investigativa\nSEI nº 012.9950.2019.0005293-18, instaurada pela Portaria nº 040/2019, por não\nterem sido identificados elementos suficientes para caracterizar transgressão\ndisciplinar atribuível à servidora investigada, conforme relatório da comissão\ndisciplinar.\nPUBLIQUE-SE.\nAndré\nAugust…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328016",
-    "paginaConferida": true,
-    "pageFim": 60
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327963",
@@ -5773,11 +5773,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327963",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 282/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta no processo administrativo disciplinar SEI nº\n012.2961.2023.0017989-12, 3ª CPPAD/CORREPOL, RESOLVE: Absolver, por\ninsuficiência de provas, o servidor de matrícula nº 12603927, da conduta de\nter, injustificadamente, retardado a instauração de inquérito policial para\napurar crime de ameaça noticiado pela senhora de iniciais M.O.C., no âmbito da\nLei Maria da Penha, além de promover o arquivamento da ocorrência criminal, BO\nnº 19 01281, após acordo entre as partes, não previstos em lei, conforme\nopinativo da comis…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327963",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327925",
@@ -5790,11 +5790,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327925",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 280/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994, RESOLVE:\nDeclarar a EXTINÇÃO DA PUNIBILIDADE, em face do reconhecimento da\nprescrição da pretensão punitiva estatal por via intercorrente, em favor do\nservidor de  Matrícula nº 20.373.704-8, referente às acusações objeto da\nPortaria nº 461/2016 (Processo SEI nº 012.13020.2025.0100607-48 / PAD nº\n5654160090756). A decisão fundamenta-se nos termos da fundamentação jurídica\nconstante na decisão proferida por este Delegado-Geral, acolhendo integralmente\nas conclusões do Relatório Final da 5ª CPPAD/CORREPOL e o opinativo jurídico da\nProcurado…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327925",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327927",
@@ -5807,11 +5807,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327927",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 279/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994, RESOLVE:\nDeclarar a EXTINÇÃO DA PUNIBILIDADE, em face do reconhecimento da\nprescrição da pretensão punitiva estatal, em favor do ex-Delegado de Polícia\nCivil, Matrícula nº 20.413.399-6, referente às acusações objeto da Portaria nº\n702/2018 (Processo SEI nº 012.13020.2025.0100602-33 / PAD nº 5654180077586). A\ndecisão fundamenta-se nos termos da fundamentação jurídica constante na decisão\nproferida por este Delegado-Geral, que acolheu integralmente o Relatório Final\nda 4ª CPPAD/CORREPOL e o Despacho PGE nº PA-UDV-PAD-212-2026, os quais\nate…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327927",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327937",
@@ -5824,11 +5824,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327937",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 278/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994, RESOLVE:\nDeclarar a EXTINÇÃO DA PUNIBILIDADE, em face do reconhecimento da\nprescrição da pretensão punitiva estatal, em favor do servidor de  Matrícula nº\n20.387.468-8, referente às acusações objeto da Portaria nº 271/2018 (Processo\nSEI nº 012.6296.2025.0067868-80). A decisão fundamenta-se nos termos da decisão\nproferida por este Delegado-Geral, que acolheu o Relatório Final da 4ª\nCPPAD/CORREPOL e o Despacho da PGE nº PA-UDV-PAD-173-2026, os quais atestaram o\nexaurimento da pretensão punitiva pela via intercorrente, aplicando-se o\ndispos…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327937",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327977",
@@ -5841,11 +5841,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327977",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 277/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994, RESOLVE:\nDeclarar a EXTINÇÃO DA PUNIBILIDADE, em face do reconhecimento da\nprescrição da pretensão punitiva estatal por via intercorrente, em favor do\nservidor de Matrícula nº 20.518.822-9, referente às acusações objeto da\nPortaria nº 549/2020 (Processo SEI nº 012.2961.2020.0051006-15). A decisão\nfundamenta-se nos termos da fundamentação jurídica constante na decisão\nproferida por este Delegado-Geral, acolhendo integralmente as conclusões do\nRelatório Final da 4ª CPPAD/CORREPOL e o opinativo jurídico da Procuradoria\nGeral do Estado exara…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327977",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327996",
@@ -5858,11 +5858,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327996",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 270/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994, RESOLVE:\nDecretar a ABSOLVIÇÃO do servidor de Matrícula nº 20.502.006, referente às\nacusações apuradas nos autos do Processo Administrativo Disciplinar (Processo\nSEI nº 012.6297.2019.0013049-18). A decisão fundamenta-se nos termos da\nfundamentação jurídica constante na decisão proferida por este Delegado-Geral, que\nacolheu integralmente as conclusões do Relatório Final da 4ª CPPAD/CORREPOL e o\nopinativo constante no Despacho PGE nº PA-NCAD-1020-2025 ante a ausência de\nconduta infracional voluntária e a consequente insuficiência de provas…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327996",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327941",
@@ -5875,11 +5875,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327941",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 268/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994, RESOLVE:\nDeterminar o ARQUIVAMENTO da Sindicância instaurada por meio da Portaria\nP.CIVIL Nº 00889117, de 06 de janeiro de 2025, publicada no Diário Oficial do\nEstado de 07 de janeiro de 2025 (Processo SEI nº 012.2961.2024.0098077-33), que\nvisava apurar suposto descumprimento de ordem judicial de autoria não identificada\nna 10ª Delegacia Territorial de Pau da Lima. A decisão fundamenta-se nos termos\nda fundamentação jurídica constante na decisão proferida por este\nDelegado-Geral, que acolheu integralmente o Relatório Final da 3ª\nCPPAD/CO…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327941",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327958",
@@ -5892,11 +5892,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327958",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 267/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 206, inciso I, da Lei Estadual nº\n6.677/1994, RESOLVE: Declarar a EXTINÇÃO DA PUNIBILIDADE, em face do\nreconhecimento da prescrição da pretensão punitiva estatal, em favor da\nservidora de Matrícula nº 20.528.429-5, referente às acusações objeto da\nPortaria nº 902/2015 (Processo SEI nº 012.6296.2023.0037804-47). A decisão\nfundamenta-se nos termos da decisão proferida por este Delegado-Geral,\nacolhendo integralmente o Relatório Final da CPPAD/SUL e o Parecer da PGE nº\nPA-NCAD-611-2025, que atestaram o transcurso do prazo prescricional\nintercorrente, determinando-se o arquiva…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327958",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327983",
@@ -5909,11 +5909,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327983",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 266/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta no processo administrativo disciplinar SEI nº\n012.2961.2020.0016977-65, 3ª CPPAD/CORREPOL, RESOLVE: ABSOLVER, por\ninsuficiência de provas, o servidor de Matrícula nº 20.479.920 das imputações\namoldadas ao art. 90, LIII, c/c art. 95, IX, da Lei Estadual nº 11.370/2009.\nTudo em conformidade com os Pareceres Nº PA-UDV-PAD-033-2026 e\nPA-UDV-PAD-058-2026, da Procuradoria Geral do Estado (PGE), e o Relatório Final\nda 3ª CPPAD/CORREPOL, os quais concluíram pela insuficiência de provas,\ndeterminando-se o ARQUIVAMENTO …",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327983",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327944",
@@ -5926,11 +5926,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327944",
-    "page": 59,
+    "page": 0,
     "snippet": "PORTARIA\nN° 263/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta na Sindicância Investigativa, SEI nº\n012.6296.2024.0076081-19, RESOLVE: Arquivar, com fundamento no art. 206,\ninciso I, da Lei estadual nº 6.677/1994, os autos do feito investigativo em\nepígrafe, instaurado para apurar as circunstâncias das supostas agressões\nfísicas e psicológicas ao custodiado Enéas Soares Neto, ocorrido na estrada de\nacesso à Aldeia Tuxá Morrinhos, município de Ibotirama-BA, em 28/05/2013, ante\na ausência de elementos informativos e probatórios suficientes para a\nindividualização da autoria…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327944",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327946",
@@ -5943,11 +5943,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327946",
-    "page": 58,
+    "page": 0,
     "snippet": "PORTARIA\nN° 262/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta na Sindicância Investigativa nº 033/2017, SEI nº 012.6296.2024.0072800-41,\nCPPAD/OESTE/CORREPOL, RESOLVE: Arquivar, com fundamento na perda do\nobjeto, os autos da sindicância investigativa na epígrafe, deflagrada apurar\nsupostas irregularidades na apresentação de conduzido na Delegacia Territorial\nde São Desidério-BA, ocorrida em 07/03/2017, em razão da consumação da\nprescrição da pretensão punitiva estatal, conforme opinativo da comissão\nprocessante e parecer da Procuradoria Geral do Estado.\nPUBLIQUE-SE.\nAndr…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327946",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327952",
@@ -5960,11 +5960,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327952",
-    "page": 58,
+    "page": 0,
     "snippet": "PORTARIA\nN° 261/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual nº 6.677/1994,\ntendo em vista o que consta na Sindicância Investigativa nº\n012.2961.2024.0040850-63, que apurou o extravio de armamento e outros pertences\nde propriedade da Polícia Civil, sob a responsabilidade do Investigador de\nPolícia Civil Jorge Marins de Oliveira, matrícula nº 20.190.069, RESOLVE:\nArquivar, com fundamento na ausência de infração funcional, tendo em vista que\na instrução processual comprovou que o extravio dos bens (01 pistola Taurus,\ncalibre .40; 01 par de algemas; 45 munições intactas, calibre .40; e 03\ncarregadores) ocorreu em v…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327952",
-    "paginaConferida": true,
-    "pageFim": 58
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327967",
@@ -5977,11 +5977,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327967",
-    "page": 58,
+    "page": 0,
     "snippet": "PORTARIA\nN° 260/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta no processo administrativo disciplinar SEI nº\n012.2961.2022.0022081-31, RESOLVE: Reconvocar a 3ª Comissão\nPermanente de Processo Administrativo Disciplinar (3ª CPPAD/CORREPOL),\ndesignada para apurar suposta conduta funcional irregular imputada ao servidor de\nMatrícula nº 20.346.510, com a finalidade exclusiva de dar fiel e\nintegral cumprimento às diligências instrutórias recomendadas pela Procuradoria\nGeral do Estado no Despacho nº PA-NCAD-832-2025 (doc.\nSEI nº 00120416393), procedendo-se ao saneamento dos aut…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327967",
-    "paginaConferida": true,
-    "pageFim": 58
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327972",
@@ -6028,11 +6028,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1328004",
-    "page": 58,
+    "page": 0,
     "snippet": "PORTARIA\nN° 151/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235 da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta no Processo Administrativo Disciplinar nº\n012.6297.2019.0009505-90 (Portaria nº 142/2019), 3ª CPPAD/CORREPOL, RESOLVE:\nArquivar os autos do processo administrativo disciplinar em epígrafe,\ninstaurado em desfavor da ex-servidora de Matrícula nº 20.409.842 , em razão da\nocorrência da prescrição da pretensão punitiva estatal, consumada enquanto o\nprocesso aguardava a elaboração de parecer junto à Procuradoria Geral do\nEstado, conforme opinativo da comissão processante e parecer da PGE.\nPUBLIQUE-SE.\nAndré\nAugusto d…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328004",
-    "paginaConferida": true,
-    "pageFim": 58
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1328023",
@@ -6045,11 +6045,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1328023",
-    "page": 58,
+    "page": 0,
     "snippet": "PORTARIA\nN° 150/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235 da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta no Processo Administrativo Disciplinar nº\n012.6297.2018.0007401-79 (Portaria nº 936/2018), RESOLVE: Arquivar os\nautos do processo administrativo disciplinar em epígrafe, instaurado em\ndesfavor do servidor de Matrícula nº 20.161.541-0, em razão da ocorrência da\nprescrição da pretensão punitiva estatal, consumada durante a fase de\nelaboração de parecer junto à Procuradoria Geral do Estado, conforme opinativo\nda comissão processante e parecer da PGE.\nPUBLIQUE-SE.\nAndré\nAugusto de Mendonça Viana\nDelegado-Geral\nda P…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328023",
-    "paginaConferida": true,
-    "pageFim": 58
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327950",
@@ -6062,11 +6062,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327950",
-    "page": 58,
+    "page": 0,
     "snippet": "PORTARIA\nN° 147/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994, RESOLVE:\nDeterminar a RECONVOCAÇÃO da Comissão Permanente de Processo Administrativo\nDisciplinar e Sindicância da Região Sul (CPPAD/SUL) para dar imediato\nprosseguimento à apuração e instrução nos autos do Processo Administrativo\nDisciplinar nº 0511100000215 (Processo SEI nº 012.6296.2024.0061447-55),\ninstaurado em desfavor dos servidores de cadastro nº 20.346.407-7, e nº\n20.346.602-9. A medida fundamenta-se nos termos da fundamentação jurídica\nconstante na decisão proferida por este Delegado-Geral, que afastou a\nocorrência de prescrição…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327950",
-    "paginaConferida": true,
-    "pageFim": 58
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1328020",
@@ -6096,11 +6096,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1328025",
-    "page": 57,
+    "page": 0,
     "snippet": "PORTARIA\nN° 131/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta no processo administrativo disciplinar SEI nº\n012.6297.2018.0007363-17, 5ª CPPAD/CORREPOL, RESOLVE: Absolver, o\nservidor de Matrícula nº 20.346.857, das imputações de irregularidade funcional\npor supostamente faltar ao serviço para o qual foi designado na CDEP, sem justa\ncausa, nos dias 1, 4, 11, 12 e 13 de dezembro de 2017, e ausentar-se do\nserviço, no dia 18/12/2017, sem autorização da superior hierárquica, condutas\nque configurariam descumprimento dos deveres funcionais do art. 175, incisos I,\nII, III e X d…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328025",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327978",
@@ -6130,11 +6130,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327990",
-    "page": 57,
+    "page": 0,
     "snippet": "PORTARIA\nN° 129/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta no processo administrativo disciplinar SEI nº\n012.6297.2019.0017954-66, 3ª CPPAD/CORREPOL, RESOLVE: Arquivar, com\nfundamento na perda do objeto, os autos do processo administrativo disciplinar\nna epígrafe, deflagrado em desfavor do ex servidor de matrícula nº 20.413.399,\nacusado de ter descumprido os prazos para apresentação em unidade policial após\nremoção (DREOF/DCCP), ausência de comprovação formal de descompatibilização\npara cargo eletivo em 2018 e resistência a ordem legítima da Corregedoria\n(CORREPOL) ao…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327990",
-    "paginaConferida": true,
-    "pageFim": 57
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1328009",
@@ -6147,11 +6147,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1328009",
-    "page": 57,
+    "page": 0,
     "snippet": "PORTARIA\nN° 117/2026 de 02 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 235, da Lei Estadual n° 6.677/1994,\ntendo em vista o que consta no processo administrativo disciplinar SEI nº\n012.6297.2019.0006607-53, CPPAD/Norte, RESOLVE: ABSOLVER, por\ninsuficiência de provas, o servidor de Matrícula nº 20.303.676, das imputações previstas\nnos incisos II, III e IX, do art. 175, da Lei Estadual n.º 6.677/94 e violação\nao disposto nos incisos XLV e LIII, do art. 90, da Lei Estadual n.° 11.370/09,\nem conformidade com o Parecer Nº PA-UDV-PAD-079-2026 da Procuradoria Geral do\nEstado (PGE) e o Relatório Final da CPPAD NORTE, determinando-se o ARQUIVAMENTO\ndo…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1328009",
-    "paginaConferida": true,
-    "pageFim": 59
+    "paginaConferida": false,
+    "pageFim": 0
   },
   {
     "id": "1327959",
@@ -6235,8 +6235,8 @@
     "page": 46,
     "snippet": "Portaria Nº 01117339 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL no uso\nde suas atribuições e tendo em vista o disposto no(a) art. 111 da Lei nº 6.677,\nde 26 de setembro de 1994, resolve conceder Licença para Tratar de\nInteresse Particular ao(s) servidor(es) abaixo relacionado(s) pertencente(s) ao\nquadro de pessoal do(a) P.CIVIL.\n Matrícula\n Nome\n Cargo\n Data Início\n Data Fim\n Total de dias\n  92116986\n  RAFAEL BARROS TELES\n  Investigador de polícia\n  07.09.2026\n  18.12.2026\n  103\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327882",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 46
   },
   {
     "id": "1327884",
@@ -6252,8 +6252,8 @@
     "page": 46,
     "snippet": "Portaria Nº 01106556 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar WALDER CAMPOS DOS SANTOS,\nmatrícula nº 20346022, para, em razão de Licença Tratamento Saúde no período de\n20 de Junho de 2026 a 17 de Setembro de 2026, substituir VALDIR BISPO DOS\nSANTOS JUNIOR, matrícula nº 20345959, no cargo Coordenador IV, do(a) 8ª DT\nDO CIA.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327884",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 46
   },
   {
     "id": "1327885",
@@ -6269,8 +6269,8 @@
     "page": 46,
     "snippet": "Portaria Nº 01117089 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar ANA LUCIA SOUZA LEAL,\nmatrícula nº 20470788, para, em razão de Férias no período de 08 de Setembro de\n2026 a 22 de Setembro de 2026, substituir JUSSARA REIS SANTANA SANTOS,\nmatrícula nº 20332595, no cargo Coordenador III, do(a) DEP DE INFRAESTRUTURA E\nLOGÍSTICA.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327885",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 46
   },
   {
     "id": "1327886",
@@ -6283,7 +6283,7 @@
     "motivo": "Substituição por férias",
     "isDepafMention": false,
     "materiaId": "1327886",
-    "page": 46,
+    "page": 0,
     "snippet": "Portaria Nº 01117094 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar TAÍSSA STOWE ALMEIDA ALVES,\nmatrícula nº 92132171, para, em razão de Férias no período de 14 de Setembro de\n2026 a 28 de Setembro de 2026, substituir DANILO SILVA DOS SANTOS,\nmatrícula nº 20487357, no cargo Coordenador III, do(a) DEP DE INFRAESTRUTURA E\nLOGÍSTICA.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327886",
     "paginaConferida": false,
@@ -6303,8 +6303,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01116498 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições e tendo em vista o disposto no(a) Art. 42, §9°, da\nConstituição do Estado da Bahia de 1989 e Art.3° da Lei n° 14.262, de 13 de\nmaio de 2020, resolve conceder Abono Permanência ao(s) servidor(es)\nabaixo relacionado(s) pertencente(s) ao Quadro de Pessoal do(a) P.CIVIL.\n Matrícula\n Nome\n Cargo\n Data início\n  20304161\n  MARCOS SANTANA LIMA\n  Investigador de polícia\n  08.08.2026\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327887",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327888",
@@ -6320,8 +6320,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117451 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar RAIMUNDO REAL FONTES,\nmatrícula nº 20435134, para, em razão de Férias no período de 12 de Setembro de\n2026 a 24 de Setembro de 2026, substituir JOSE FELIZARDO DOS SANTOS, matrícula\nnº 20161532, no cargo Coordenador IV, do(a) 8ª DT DO CIA.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327888",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327889",
@@ -6337,8 +6337,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117102 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar MAISA FLORES DOS SANTOS,\nmatrícula nº 12603038, para, em razão de Férias no período de 08 de Setembro de\n2026 a 17 de Setembro de 2026, substituir VALDEMIR BARBOSA JUNIOR,\nmatrícula nº 92105853, no cargo Coordenador II, do(a) DEP DE INFRAESTRUTURA E\nLOGÍSTICA.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327889",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327890",
@@ -6354,8 +6354,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117511 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar ROSANGELA DO ROSARIO SOARES,\nmatrícula nº 12592009, para, em razão de Férias no período de 24 de Agosto de\n2026 a 02 de Setembro de 2026, substituir ALEX RIBEIRO CHASTINET,\nmatrícula nº 12615615, no cargo Coordenador III, do(a) DEP DE GEST DE PESSOAS,\nSAÚDE E VAL PROF.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327890",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327891",
@@ -6371,8 +6371,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117485 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições e tendo em vista o disposto no(a) arts. 72 e 74, inciso\nI, da Lei nº11.370 de 04.02.2009, resolve remover, o(s)\nservidor(es)abaixo:\n Matrícula\n Nome\n Cargo\n Unidade Origem\n Unidade Destino\n Data Início\n Número do Proc. SEI\n  12604059\n  JAQUELINE BARRETO DA LUZ SILVA\n  Investigador de polícia\n  26ª DT DE VILA DE ABRANTES\n  DEPARTAMENTO DE POLÍCIA METROPOLITANA\n  Data da Publicação\n  012.6629.2026.0068264-31\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327891",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327892",
@@ -6388,8 +6388,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117520 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar STEPHANIE DE CARVALHO\nSANTOS, matrícula nº 92053463, para, em razão de Gozo Férias Oportuno no\nperíodo de 21 de Setembro de 2026 a 05 de Outubro de 2026, substituir MARIA ALICE\nRODRIGUES SANTIAGO, matrícula nº 20500818, no cargo Coordenador Tecnico,\ndo(a) DEP DE GEST DE PESSOAS, SAÚDE E VAL PROF.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327892",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327893",
@@ -6405,8 +6405,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117515 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar ALEX RIBEIRO CHASTINET,\nmatrícula nº 12615615, para, em razão de Férias no período de 03 de Setembro de\n2026 a 15 de Setembro de 2026, substituir STEPHANIE DE CARVALHO SANTOS,\nmatrícula nº 92053463, no cargo Coordenador II, do(a) DEP DE GEST DE PESSOAS,\nSAÚDE E VAL PROF.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327893",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327894",
@@ -6422,8 +6422,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117525 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar MARIA SOLANGE SOUZA DE\nJESUS, matrícula nº 20522251, para, em razão de Gozo Férias Oportuno no\nperíodo de 26 de Agosto de 2026 a 04 de Setembro de 2026, substituir LILIANE\nBISPO DA SILVA ROSAS, matrícula nº 20512433, no cargo Coordenador III,\ndo(a) DEP DE GEST DE PESSOAS, SAÚDE E VAL PROF.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327894",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327895",
@@ -6439,8 +6439,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117350 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL no uso\nde suas atribuições e tendo em vista o disposto no(a) art. 111 da Lei nº 6.677,\nde 26 de setembro de 1994, resolve conceder Licença para Tratar de\nInteresse Particular ao(s) servidor(es) abaixo relacionado(s) pertencente(s) ao\nquadro de pessoal do(a) P.CIVIL.\n Matrícula\n Nome\n Cargo\n Data Início\n Data Fim\n Total de dias\n  92116602\n  RODRIGO JOSE ANDRADE SANTOS\n  Investigador de polícia\n  07.09.2026\n  18.12.2026\n  103\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327895",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327896",
@@ -6456,8 +6456,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117539 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar MARIA ALICE RODRIGUES\nSANTIAGO, matrícula nº 20500818, para, em razão de Gozo Férias Oportuno no\nperíodo de 08 de Setembro de 2026 a 17 de Setembro de 2026, substituir BARBARA\nSANTOS LIMA, matrícula nº 20501117, no cargo Diretor, do(a) DEP DE GEST DE\nPESSOAS, SAÚDE E VAL PROF.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327896",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327897",
@@ -6473,8 +6473,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01117530 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar ESTHER DE CARVALHO ARAÚJO,\nmatrícula nº 92125889, para, em razão de Gozo Férias Oportuno no período de 01\nde Setembro de 2026 a 10 de Setembro de 2026, substituir ANADJANE DE JESUS\nDA CRUZ PORTO, matrícula nº 92123774, no cargo Coordenador III, do(a) DEP\nDE GEST DE PESSOAS, SAÚDE E VAL PROF.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327897",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327898",
@@ -6490,8 +6490,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01116218 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar HENRIQUE CALDAS SOUZA,\nmatrícula nº 92127480, para, em razão de Férias no período de 17 de Agosto de\n2026 a 26 de Agosto de 2026, substituir RAUL ROBERTO NOVAES, matrícula\nnº 20345983, no cargo Coordenador IV, do(a) 25ª DT DE DIAS D'ÁVILA.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327898",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327899",
@@ -6507,8 +6507,8 @@
     "page": 47,
     "snippet": "Portaria Nº 01116489 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições e tendo em vista o disposto no(a) Art. 42, §9°, da\nConstituição do Estado da Bahia de 1989 e Art.3° da Lei n° 14.262, de 13 de\nmaio de 2020, resolve conceder Abono Permanência ao(s) servidor(es)\nabaixo relacionado(s) pertencente(s) ao Quadro de Pessoal do(a) P.CIVIL.\n Matrícula\n Nome\n Cargo\n Data início\n  20434934\n  ANTONIO SERGIO SOUZA REGIS DO NASCIMENTO\n  Investigador de polícia\n  13.05.2026\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327899",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 47
   },
   {
     "id": "1327900",
@@ -6518,10 +6518,10 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1327900",
-    "page": 47,
+    "page": 0,
     "snippet": "Portaria Nº 01117456 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL,no uso\nde uma das suas atribuições, resolve designar, com efeito a partir de 02\nde Setembro de 2026, GILMAR PEREIRA NOGUEIRA, Delegado de polícia,\nCLASSE 2, matrícula nº 20409786, que tem exercício no(a) DT  DE ITATIM, para\nresponder cumulativamente, nos termos da Lei nº 12.600/2012, publicada no\nDiário Oficial de 29.11.2012, pelo expediente da DT  DE MILAGRES.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327900",
     "paginaConferida": false,
@@ -6541,8 +6541,8 @@
     "page": 48,
     "snippet": "Portaria Nº 01117100 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar EMERSON PEREIRA DOS SANTOS\nMACIEL, matrícula nº 92105244, para, em razão de Férias no período de 16 de\nSetembro de 2026 a 25 de Setembro de 2026, substituir MARCELO PEIXOTO DE\nALMEIDA, matrícula nº 20423198, no cargo Coordenador III, do(a) DEP DE\nINFRAESTRUTURA E LOGÍSTICA.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327901",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327902",
@@ -6558,8 +6558,8 @@
     "page": 48,
     "snippet": "Portaria Nº 01117549 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve cessar o efeito, a partir de 02 de\nSetembro de 2026, o ato de  Nº 00981204 de 16 de Setembro de 2025, publicado(a)\nno Diário Oficial do Estado, referente ao(à) servidor(a) ROSANGELA BATISTA\nSILVA, matrícula nº 20376745.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327902",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327903",
@@ -6568,15 +6568,15 @@
     "editionDate": "2026-09-02",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1327903",
     "page": 48,
     "snippet": "Portaria Nº 01117545 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve cessar o efeito, a partir de 02 de\nSetembro de 2026, o ato de DESIGNAÇÃO PARA EXERCÍCIO CUMULATIVO Nº 00982065 de\n17 de Setembro de 2025, publicado(a) no Diário Oficial do Estado, referente\nao(à) servidor(a) JAMES FEITOSA MOURA FILHO, matrícula nº 92116845.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327903",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327904",
@@ -6592,8 +6592,8 @@
     "page": 48,
     "snippet": "Portaria Nº 01117712 de 01 de Setembro de 2026\nO(A) Delegado Geral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL,\nno uso de suas atribuições e tendo em vista o disposto no(a) art. 119, §1º, da\nLei nº 6.677, de 26 de setembro de 1994, c/c Emenda Constitucional nº 20, de 15\nde dezembro de 1998, resolve averbar, nos registros funcionais do(s)\nservidor(es) do Quadro de Pessoal do(a) P.CIVIL:\n Processo\n Matrícula\n Nome\n Cargo\n Quinquênio\n Dias\n  0505160484335\n  20179711\n  WALKISA LINS DE SANTANA RODRIGUES\n  Investigador de polícia\n  09.08.1989 a 08.08.1994\n  180\nFinalidade:Contagem Licença Prêmio em dobro\npara fins de aposentadoria\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327904",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327905",
@@ -6609,8 +6609,8 @@
     "page": 48,
     "snippet": "Portaria Nº 01117623 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar WILLIAM JOHNNYS SILVA\nOLIVEIRA, matrícula nº 92040371, para, em razão de Férias no período de 08\nde Setembro de 2026 a 17 de Setembro de 2026, substituir WILLE CONCEICAO SILVA,\nmatrícula nº 12583133, no cargo Coordenador III, do(a) DIRETORIA DE SAÚDE-DPSV.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327905",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327906",
@@ -6626,8 +6626,8 @@
     "page": 48,
     "snippet": "Portaria Nº 01117727 de 01 de Setembro de 2026\nO(A) Delegado Geral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL,\nno uso de suas atribuições e tendo em vista o disposto no(a) art. 119, §1º, da\nLei nº 6.677, de 26 de setembro de 1994, c/c Emenda Constitucional nº 20, de 15\nde dezembro de 1998, resolve averbar, nos registros funcionais do(s)\nservidor(es) do Quadro de Pessoal do(a) P.CIVIL:\n Processo\n Matrícula\n Nome\n Cargo\n Quinquênio\n Dias\n  0505180051036\n  20180990\n  JOSE JOHNISON BEZERRA DE MENDONCA\n  Investigador de polícia\n  13.11.1989 a 12.11.1994\n  180\nFinalidade:Contagem Licença Prêmio em dobro\npara fins de aposentadoria\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327906",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327907",
@@ -6643,8 +6643,8 @@
     "page": 48,
     "snippet": "Portaria Nº 01117464 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições resolve prorrogar, com efeito a partir de 18 de\nJulho de 2026, a Portaria nº 01047060, que designou RAPHAEL SANTANA SOL\nPOSTO, Delegado de polícia, CLASSE 3, matrícula nº 92116202, que tem exercício\nno(a) DT  DE EUCLIDES DA CUNHA, para responder cumulativamente, nos termos da\nLei nº 12.600/2012, publicada no Diário Oficial de 29.11.2012, publicada no\nDiário Oficial de 01 de Setembro de 2026, pelo expediente da DT DE RIBEIRA DO\nAMPARO.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327907",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327908",
@@ -6660,8 +6660,8 @@
     "page": 48,
     "snippet": "Portaria Nº 01116975 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar MARIO CESAR CAPINAN DA\nSILVA, matrícula nº 20247487, para, em razão de Férias no período de 14 de\nSetembro de 2026 a 28 de Setembro de 2026, substituir MARCUS TITO MAC ALLISTER\nVIANA, matrícula nº 20345816, no cargo Coordenador III, do(a) DEL REPRES\nFURTOS E ROUBOS SALVADOR.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327908",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327909",
@@ -6677,8 +6677,8 @@
     "page": 48,
     "snippet": "Portaria Nº 01117736 de 01 de Setembro de 2026\nO(A) Delegado\nGeral do(a) POLÍCIA CIVIL DO ESTADO DA BAHIA - P.CIVIL, no\nuso de suas atribuições, resolve designar THIAGO RAIMUNDO DOS SANTOS,\nmatrícula nº 92054850, para, em razão de Férias no período de 06 de Julho de\n2026 a 20 de Julho de 2026, substituir ANA LUCIA OLIVEIRA DOS SANTOS,\nmatrícula nº 92123445, no cargo Coordenador III, do(a) DEPARTAMENTO DE POLÍCIA\nDO INTERIOR PCBA.\nANDRE AUGUSTO DE MENDONCA VIANA\nPOLÍCIA CIVIL DO ESTADO DA BAHIA",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327909",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327705",
@@ -6694,8 +6694,8 @@
     "page": 48,
     "snippet": "PORTARIA Nº 243 DE 01 DE SETEMBRO DE 2026.\nALTERA A PUBLICAÇÃO NO DIÁRIO OFICIAL DO ESTADO\nREFERENTE A RESPONSÁVEL PELA FISCALIZAÇÃO DO CONTRATO Nº 81/2024, CELEBRADO\nENTRE A POLICIA CIVIL DO ESTADO DA BAHIA E A EMPRESA WEBTRIP AGENCIA DE VIAGENS\nE TURISMO.\nO DELEGADO - GERAL DA POLÍCIA CIVIL DO ESTADO DA BAHIA, no uso das\natribuições que lhe são conferidas pela Lei 11.370, de 04 de fevereiro de 2009,\nartigo 19, incs. I, VII, XII, XIII e XIV,\nRESOLVE:\nArt.\n1º - Alterar a publicação no Diário Oficial do Estado referente à\nresponsável pela fiscalização do contrato nº 81/2024, de 04 de novembro de\n2024, para designar o servidor abaixo como responsável pela fiscalização do\nContrato, devendo observar as determinações do art.154 da Lei Estadual nº\n9.433/2005 e art. 117 §§ 1º ao 4º da Lei Federal…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327705",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327429",
@@ -6708,11 +6708,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327429",
-    "page": 0,
+    "page": 48,
     "snippet": "PORTARIA\nN° 286/2026 de 01 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 204, da Lei Estadual nº 6.677/1994, RESOLVE:\nInstaurar o Processo Administrativo Disciplinar nº 012.2961.2025.0097850-99,\ndesignando a 4ª CPPAD/CORREPOL para, no prazo de 60 (sessenta) dias, admitida\numa prorrogação deste prazo em face de circunstâncias excepcionais, apurar\nsuposta irregularidade funcional atribuída ao servidor de matrícula nº 20.354.245,\nque teria se ausentado de suas atividades laborais no período compreendido\nentre 23 de junho de 2020 e 14 de outubro de 2020, subsequente ao término de\nsua licença médica (em 22/06/2020) e ao indeferimento da prorrogação …",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327429",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 48
   },
   {
     "id": "1327432",
@@ -6725,11 +6725,11 @@
     "motivo": "Sindicância / processo disciplinar",
     "isDepafMention": false,
     "materiaId": "1327432",
-    "page": 0,
+    "page": 48,
     "snippet": "PORTARIA\nN° 287/2026 de 01 de\nsetembro de 2026.  O Excelentíssimo Senhor Delegado-Geral da Polícia Civil\ndo Estado da Bahia, Bel. André Augusto de Mendonça Viana, no uso de suas\natribuições legais, com fundamento no art. 204, da Lei Estadual nº 6.677/1994, RESOLVE:\nInstaurar o Processo Administrativo Disciplinar nº 012.2961.2026.0047771-45,\ncom fundamento no SEI nº 012.5914.2026.0043604-42, designando a CPPAD/LESTE\npara, no prazo de 60 (sessenta) dias, admitida uma prorrogação deste prazo em\nface de circunstâncias excepcionais, apurar suposta irregularidade funcional\natribuída ao servidor de matrícula nº 12.602.850.  A apuração visa elucidar a\nsuposta conduta de proferir reiteradas ameaças contra um colega policial civil\ne o suposto assédio contra uma servidora pública, eventos ocorridos n…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327432",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 49
   },
   {
     "id": "1327375",
@@ -6742,11 +6742,11 @@
     "motivo": "Averbação de tempo",
     "isDepafMention": false,
     "materiaId": "1327375",
-    "page": 0,
+    "page": 49,
     "snippet": "PORTARIA\nN° 0286 de 14 de agosto de 2026.\nA Diretora do Departamento de Gestão de Pessoas, Saúde e Valorização\nProfissional - DPSV, no uso de suas atribuições:\nReconhecer,\nnos termos do artigo 84, da Lei n.º 6.677 de 26.09.1994 ao servidor PEDRO\nHENRIQUE FERREIRA ALMEIDA, matrícula nº 92118817, ocupante do cargo de\nInvestigador de Polícia Civil, Classe 3, admitido em 22/04/2024,\no percentual de 8% (oito por cento) de gratificação de adicional por tempo de\nserviço, sobre seus vencimentos, por haver completado 8 anos de serviço público\nem 24.03.2026, devido ao período averbado.\n  Port.\n Nome\n Matricula\n Perc. total\n Tempo de serviço\n Data/mês/ano\n Processo\n 0200\n PEDRO HENRIQUE FERREIRA ALMEIDA\n 92118817\n 8%\n 8\n anos\n 24.03.2026\n 012.9541.2025.0028951-55\nBarbara\nSantos Lima,\nDelegada\nde Polí…",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1327375",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 49
   },
   {
     "id": "1327092",
@@ -7826,8 +7826,8 @@
     "editionDate": "2026-08-26",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Nomeação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1325074",
     "page": 0,
@@ -8081,8 +8081,8 @@
     "editionDate": "2026-08-25",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1324820",
     "page": 48,
@@ -10529,8 +10529,8 @@
     "editionDate": "2026-08-15",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1321102",
     "page": 0,
@@ -12587,7 +12587,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1317661",
     "page": 49,
@@ -13470,8 +13470,8 @@
     "editionDate": "2026-08-05",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Nomeação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1316619",
     "page": 0,
@@ -13692,7 +13692,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1316613",
     "page": 45,
@@ -14287,7 +14287,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1315042",
     "page": 79,
@@ -14304,7 +14304,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1315035",
     "page": 79,
@@ -14321,7 +14321,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1315036",
     "page": 79,
@@ -14338,7 +14338,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1315038",
     "page": 79,
@@ -14406,7 +14406,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1315041",
     "page": 78,
@@ -14814,7 +14814,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1315486",
     "page": 76,
@@ -16055,7 +16055,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1314832",
     "page": 96,
@@ -17652,8 +17652,8 @@
     "editionDate": "2026-07-22",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Nomeação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1310262",
     "page": 0,
@@ -17704,7 +17704,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1310774",
     "page": 84,
@@ -18672,8 +18672,8 @@
     "editionDate": "2026-07-21",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1309833",
     "page": 59,
@@ -19574,7 +19574,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1308378",
     "page": 29,
@@ -19761,7 +19761,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1307585",
     "page": 39,
@@ -19778,7 +19778,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1307583",
     "page": 39,
@@ -20730,7 +20730,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1306289",
     "page": 51,
@@ -22770,7 +22770,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1302715",
     "page": 74,
@@ -23466,8 +23466,8 @@
     "editionDate": "2026-07-01",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1301855",
     "page": 84,
@@ -23603,7 +23603,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1301253",
     "page": 34,
@@ -23637,7 +23637,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1301250",
     "page": 33,
@@ -24554,8 +24554,8 @@
     "editionDate": "2026-06-27",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1300597",
     "page": 110,
@@ -24571,8 +24571,8 @@
     "editionDate": "2026-06-27",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1300637",
     "page": 111,
@@ -26696,8 +26696,8 @@
     "editionDate": "2026-06-17",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Nomeação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1297129",
     "page": 61,
@@ -27393,8 +27393,8 @@
     "editionDate": "2026-06-13",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1295370",
     "page": 55,
@@ -27887,7 +27887,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1294694",
     "page": 0,
@@ -29603,8 +29603,8 @@
     "editionDate": "2026-06-10",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Nomeação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Contratos e parcerias",
+    "motivo": "Fiscal / gestor de contrato",
     "isDepafMention": false,
     "materiaId": "1293451",
     "page": 56,
@@ -29773,8 +29773,8 @@
     "editionDate": "2026-06-09",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1293317",
     "page": 38,
@@ -30029,7 +30029,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1292765",
     "page": 102,
@@ -30046,7 +30046,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1292766",
     "page": 102,
@@ -30063,7 +30063,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1292767",
     "page": 102,
@@ -30080,7 +30080,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1292768",
     "page": 102,
@@ -30114,7 +30114,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1292770",
     "page": 102,
@@ -30607,7 +30607,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1291452",
     "page": 69,
@@ -30624,7 +30624,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1291389",
     "page": 68,
@@ -30641,7 +30641,7 @@
     "matchedTerm": "DEPAF",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": true,
     "materiaId": "1291387",
     "page": 68,
@@ -30725,8 +30725,8 @@
     "editionDate": "2026-06-03",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1291843",
     "page": 68,
@@ -30742,8 +30742,8 @@
     "editionDate": "2026-06-03",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1291842",
     "page": 68,
@@ -30913,7 +30913,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1291867",
     "page": 67,
@@ -30946,8 +30946,8 @@
     "editionDate": "2026-06-03",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1291864",
     "page": 67,
@@ -31116,8 +31116,8 @@
     "editionDate": "2026-06-03",
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
-    "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "assunto": "Direitos e vantagens",
+    "motivo": "Gratificação",
     "isDepafMention": false,
     "materiaId": "1291836",
     "page": 66,
@@ -31389,7 +31389,7 @@
     "matchedTerm": "Polícia Civil da Bahia",
     "movementType": "Designação",
     "assunto": "Pessoal",
-    "motivo": "Designação para cargo",
+    "motivo": "Designação para função",
     "isDepafMention": false,
     "materiaId": "1291076",
     "page": 49,
