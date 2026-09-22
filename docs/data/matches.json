@@ -22246,11 +22246,11 @@
     "motivo": "Nomeação",
     "isDepafMention": false,
     "materiaId": "1303163-2",
-    "page": 0,
+    "page": 4,
     "snippet": "nomear SELMA CRISTINA SANCHES BRITO para o cargo de Investigador de Polícia Civil, da lotação da Polícia Civil da Bahia, da estrutura da Secretaria da Segurança Pública, em cumprimento à decisão judicial, proferida nos autos da Ação de Cumprimento de Sentença nº 8047925-32.2023.8.05.0001, que tramita na 8ª Vara da Fazenda Pública da Comarca de Salvador.",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1303163",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 4
   },
   {
     "id": "1303163-3",
@@ -22263,11 +22263,11 @@
     "motivo": "Nomeação",
     "isDepafMention": false,
     "materiaId": "1303163-3",
-    "page": 0,
+    "page": 4,
     "snippet": "nomear, em caráter provisório, MARCELLO FERRAZ VENANCIO para o cargo de Perito Médico Legista de Polícia Civil, da estrutura da Secretaria da Segurança Pública, em cumprimento à decisão judicial, proferida nos autos do Mandado de Segurança nº 8050744-08.2024.8.05.0000, que tramita no Tribunal de Justiça do Estado da Bahia.",
     "sourceUrl": "https://dool.egba.ba.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1303163",
-    "paginaConferida": false,
-    "pageFim": 0
+    "paginaConferida": true,
+    "pageFim": 4
   },
   {
     "id": "1302246",
